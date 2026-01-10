@@ -28,10 +28,10 @@ import '../styles/global.css';
       <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 md:pt-10 pb-6 md:pb-6 relative z-10">
-      <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-8 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 md:pt-10 pb-2 md:pb-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-2 sm:gap-4 lg:gap-8 items-center">
         <!-- Left Content with Two Overlapping Space Bubbles -->
-        <div class="text-center lg:text-left relative overflow-visible pt-6 sm:pt-8 md:pt-0 min-h-[420px] sm:min-h-[380px] md:min-h-0">
+        <div class="text-center lg:text-left relative overflow-visible pt-2 sm:pt-4 md:pt-0 min-h-[380px] sm:min-h-[360px] md:min-h-0">
           <!-- Two Floating Overlapping Bubbles - full size on mobile for clear visibility -->
           <div id="space-bubble" class="relative cursor-pointer transform scale-100 origin-center sm:origin-top-left" onclick="sendEncryptedMessage()">
             
@@ -270,10 +270,10 @@ import '../styles/global.css';
         </div>
         
         <!-- Right: Animated Phone Mockup - scroll down to see on mobile -->
-        <div id="phone-mockup-section" class="relative flex flex-col items-center justify-center lg:justify-end mt-6 lg:mt-0">
+        <div id="phone-mockup-section" class="relative flex flex-col items-center justify-center lg:justify-end mt-0 lg:mt-0">
           <!-- Scroll hint on mobile - just animated hand -->
-          <a href="#phone-mockup-section" class="lg:hidden text-center mb-2 cursor-pointer" onclick="event.preventDefault(); document.getElementById('phone-mockup-section').scrollIntoView({behavior: 'smooth', block: 'start'});">
-            <p class="text-2xl animate-bounce">👇</p>
+          <a href="#phone-mockup-section" class="lg:hidden text-center mb-1 cursor-pointer" onclick="event.preventDefault(); document.getElementById('phone-mockup-section').scrollIntoView({behavior: 'smooth', block: 'start'});">
+            <p class="text-xl animate-bounce">👇</p>
           </a>
           <div class="phone-frame w-60 sm:w-64 md:w-72 animate-float glow">
             <div class="phone-screen aspect-[9/19] relative">
@@ -1685,30 +1685,57 @@ import '../styles/global.css';
   
   // Mobile touch handling - deactivate hover effect after tap
   const spaceBubble = document.getElementById('space-bubble');
+  let touchMoved = false;
   
   if (spaceBubble) {
     // Add a class to track active state on mobile
-    spaceBubble.addEventListener('touchstart', () => {
+    spaceBubble.addEventListener('touchstart', (e) => {
+      touchMoved = false;
       spaceBubble.classList.add('touch-active');
       
       // Clear any existing timeout
       if (glowTimeout) clearTimeout(glowTimeout);
-      
-      // Auto-deactivate after animation time (2s) on mobile, unless animation extends it
-      glowTimeout = setTimeout(() => {
-        if (!isAnimating) {
-          spaceBubble.classList.remove('touch-active');
-        }
-      }, 2000);
-    });
+    }, { passive: true });
     
-    // Also deactivate on scroll
-    window.addEventListener('scroll', () => {
-      if (spaceBubble.classList.contains('touch-active') && !isAnimating) {
+    // Track if finger moves (scrolling)
+    spaceBubble.addEventListener('touchmove', () => {
+      touchMoved = true;
+      // Immediately deactivate if scrolling
+      deactivateGlow();
+    }, { passive: true });
+    
+    // Deactivate when touch ends
+    spaceBubble.addEventListener('touchend', () => {
+      // If it was a scroll, already deactivated
+      if (touchMoved) return;
+      
+      // Clear any existing timeout
+      if (glowTimeout) clearTimeout(glowTimeout);
+      
+      // Set timeout based on whether animation started
+      const delay = isAnimating ? 1900 : 800;
+      glowTimeout = setTimeout(() => {
         deactivateGlow();
-      }
+      }, delay);
+    }, { passive: true });
+    
+    // Also handle touchcancel
+    spaceBubble.addEventListener('touchcancel', () => {
+      deactivateGlow();
     }, { passive: true });
   }
+  
+  // Always deactivate on scroll - force remove regardless of state
+  window.addEventListener('scroll', () => {
+    deactivateGlow();
+  }, { passive: true });
+  
+  // Also deactivate on any touch outside the bubble
+  document.addEventListener('touchstart', (e) => {
+    if (spaceBubble && !spaceBubble.contains(e.target as Node)) {
+      deactivateGlow();
+    }
+  }, { passive: true });
   
   // Step labels for the 11-step animation flow
   const stepLabels = [
@@ -1828,6 +1855,39 @@ import '../styles/global.css';
     pauseAutoPlay();
   });
   
+  // Swipe gesture support for phone animation
+  const phoneAnimation = document.getElementById('phone-animation');
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  if (phoneAnimation) {
+    phoneAnimation.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    phoneAnimation.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+  
+  function handleSwipe() {
+    const swipeThreshold = 50; // Minimum swipe distance
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swiped left - go to next
+        goToNext();
+        pauseAutoPlay();
+      } else {
+        // Swiped right - go to previous
+        goToPrev();
+        pauseAutoPlay();
+      }
+    }
+  }
+  
   // Initialize
   showFrame(0);
   
@@ -1888,12 +1948,13 @@ import '../styles/global.css';
     transition: all 0.3s ease;
   }
   
-  /* Big bubble glow - desktop uses hover, mobile uses touch-active */
-  @media (hover: hover) {
+  /* Big bubble glow - desktop uses hover (only for devices with fine pointer like mouse) */
+  @media (pointer: fine) {
     #space-bubble:hover .big-bubble {
       box-shadow: 0 0 60px rgba(99, 102, 241, 0.2), inset 0 0 60px rgba(139, 92, 246, 0.1);
     }
   }
+  /* Touch devices use touch-active class controlled by JavaScript */
   #space-bubble.touch-active .big-bubble {
     box-shadow: 0 0 60px rgba(99, 102, 241, 0.2), inset 0 0 60px rgba(139, 92, 246, 0.1);
   }
@@ -2181,9 +2242,9 @@ import '../styles/global.css';
   }
   
   /* FULL AREA HOVER - hovering anywhere in #space-bubble triggers intense glow on BOTH bubbles */
-  /* Use @media (hover: hover) to only apply :hover on devices with mouse, not touch */
-  /* touch-active class is controlled by JavaScript for mobile */
-  @media (hover: hover) {
+  /* Use @media (pointer: fine) to only apply :hover on devices with mouse/trackpad, not touch */
+  /* touch-active class is controlled by JavaScript for mobile/touch devices */
+  @media (pointer: fine) {
     #space-bubble:hover .bubble-1 {
       border-color: rgba(99, 102, 241, 0.7) !important;
       background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.35), rgba(6, 182, 212, 0.25)) !important;
