@@ -4,8 +4,8 @@ import '../styles/global.css';
 ---
 
 <Layout title="FRNDSAPP - Find Your People. Verified. | 3D Face Verified | E2EE Everything">
-  <!-- Hero Section -->
-  <section class="relative flex items-center pt-16 overflow-visible">
+  <!-- Hero Section - smaller top padding on mobile for compact navbar -->
+  <section class="relative flex items-center pt-8 sm:pt-12 overflow-visible">
     <!-- Background Effects -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
@@ -13,12 +13,12 @@ import '../styles/global.css';
       <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 md:pt-10 pb-4 md:pb-6 relative z-10">
-      <div class="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-2 sm:pt-6 md:pt-10 pb-2 md:pb-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-2 sm:gap-4 lg:gap-8 items-center">
         <!-- Left Content with Two Overlapping Space Bubbles -->
-        <div class="text-center lg:text-left relative overflow-visible pt-6 sm:pt-8 md:pt-0">
-          <!-- Two Floating Overlapping Bubbles - scales down on mobile -->
-          <div id="space-bubble" class="relative cursor-pointer transform scale-[0.85] sm:scale-90 md:scale-100 origin-center sm:origin-top-left" onclick="sendEncryptedMessage()">
+        <div class="text-center lg:text-left relative overflow-visible pt-2 sm:pt-6 md:pt-0">
+          <!-- Two Floating Overlapping Bubbles - scales down more on mobile -->
+          <div id="space-bubble" class="relative cursor-pointer transform scale-[0.7] sm:scale-85 md:scale-100 origin-center sm:origin-top-left" onclick="sendEncryptedMessage()">
             
             <!-- Fusion Dots - appear and merge on hover -->
             <div class="fusion-dot fusion-dot-1 bg-primary" style="top: 5%; left: 20%;"></div>
@@ -54,9 +54,9 @@ import '../styles/global.css';
               <div class="absolute inset-3 rounded-full border border-white/5 transition-all duration-500"></div>
             </div>
             
-            <!-- SITTING Astronaut on Rocket - At LEFT edge of first bubble (safe area) -->
-            <div id="astronaut-sitting" class="astronaut-unit absolute z-30" style="left: -10%; top: -5%;">
-              <svg class="w-10 h-14 sm:w-12 sm:h-16 md:w-14 md:h-20 drop-shadow-[0_0_12px_rgba(99,102,241,0.5)]" viewBox="0 0 80 130" fill="none">
+            <!-- SITTING Astronaut on Rocket - At LEFT edge of first bubble (tiny on mobile) -->
+            <div id="astronaut-sitting" class="astronaut-unit absolute z-30" style="left: -8%; top: 5%;">
+              <svg class="w-6 h-8 sm:w-10 sm:h-14 md:w-14 md:h-20 drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]" viewBox="0 0 80 130" fill="none">
                 <!-- ROCKET -->
                 <ellipse cx="40" cy="85" rx="12" ry="30" fill="url(#rocketBody)" stroke="#CBD5E1" stroke-width="1"/>
                 <!-- Rocket nose -->
@@ -112,9 +112,9 @@ import '../styles/global.css';
               </svg>
             </div>
             
-            <!-- HANGING Astronaut with Jetpack - At RIGHT edge of second bubble -->
-            <div id="astronaut-hanging" class="astronaut-unit absolute z-30 right-[-5%] bottom-[25%] sm:right-[0%] sm:bottom-[8%]">
-              <svg class="w-10 h-12 sm:w-12 sm:h-14 md:w-14 md:h-16 drop-shadow-[0_0_12px_rgba(236,72,153,0.5)]" viewBox="0 0 80 110" fill="none">
+            <!-- HANGING Astronaut with Jetpack - At RIGHT edge of second bubble (tiny on mobile) -->
+            <div id="astronaut-hanging" class="astronaut-unit absolute z-30 right-[-2%] bottom-[20%] sm:right-[0%] sm:bottom-[8%]">
+              <svg class="w-6 h-7 sm:w-10 sm:h-12 md:w-14 md:h-16 drop-shadow-[0_0_8px_rgba(236,72,153,0.4)]" viewBox="0 0 80 110" fill="none">
                 <!-- ASTRONAUT HANGING/FLOATING with jetpack -->
                 <!-- Helmet -->
                 <circle cx="40" cy="22" r="18" fill="white" stroke="#F9A8D4" stroke-width="2"/>
@@ -181,22 +181,22 @@ import '../styles/global.css';
               </div>
             </div>
             
-            <!-- Small floating stars -->
-            <div class="absolute -left-2 top-24 text-xs animate-twinkle-1 text-yellow-300">⭐</div>
-            <div class="absolute -left-10 top-10 text-sm animate-twinkle-2 text-cyan-400">✦</div>
-            <div class="absolute -right-2 bottom-28 text-xs animate-twinkle-3 text-pink-300">⭐</div>
-            <div class="absolute -right-10 bottom-14 text-sm animate-twinkle-1 text-purple-400">✦</div>
+            <!-- Small floating stars - hidden on mobile -->
+            <div class="absolute -left-2 top-24 text-xs animate-twinkle-1 text-yellow-300 hidden sm:block">⭐</div>
+            <div class="absolute -left-10 top-10 text-sm animate-twinkle-2 text-cyan-400 hidden sm:block">✦</div>
+            <div class="absolute -right-2 bottom-28 text-xs animate-twinkle-3 text-pink-300 hidden sm:block">⭐</div>
+            <div class="absolute -right-10 bottom-14 text-sm animate-twinkle-1 text-purple-400 hidden sm:block">✦</div>
             
             
-            <!-- Content - Clean and properly spaced -->
-            <div class="relative z-20 py-3 sm:py-4 px-3 sm:px-5 mt-2">
+            <!-- Content - Compact on mobile, properly spaced on desktop -->
+            <div class="relative z-20 py-1 sm:py-3 px-2 sm:px-5 mt-0 sm:mt-2">
               <!-- App Category Badge - shifts right on large screens -->
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-3 lg:ml-32 xl:ml-40">
+              <div class="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/5 border border-white/10 mb-2 sm:mb-3 lg:ml-32 xl:ml-40">
                 <span class="text-sm">💬</span>
                 <span class="text-xs sm:text-sm text-text-secondary">Next-Gen Messaging</span>
               </div>
               
-              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight mb-3 whitespace-nowrap">
+              <h1 class="text-2xl sm:text-3xl lg:text-5xl font-display font-bold leading-tight mb-2 sm:mb-3">
                 <span class="gradient-text">Connect in Space</span>
                 <!-- Secure Message Shield Icon -->
                 <span id="security-lock" class="inline-block ml-1 relative align-middle">
@@ -221,35 +221,35 @@ import '../styles/global.css';
                 </span>
               </h1>
               
-              <p class="text-sm sm:text-base lg:text-lg text-white/90 font-medium mb-1">
+              <p class="text-xs sm:text-sm lg:text-lg text-white/90 font-medium mb-0.5 sm:mb-1">
                 Space has no boundaries. Neither do possibilities.
               </p>
-              <p class="text-sm sm:text-base text-text-secondary mb-3">
+              <p class="text-xs sm:text-sm text-text-secondary mb-2 sm:mb-3">
                 Join Spaces for dating, business, travel — anything.
               </p>
               
               <!-- Create your own -->
-              <p class="text-accent text-xs sm:text-sm mb-4 font-medium">
+              <p class="text-accent text-[10px] sm:text-xs mb-2 sm:mb-4 font-medium">
                 Can't find the right Space? <span class="underline decoration-dotted underline-offset-4">Create your own!</span> ✨
               </p>
               
               <!-- App Store Buttons -->
-              <div class="flex flex-row gap-2 mb-3">
-                <a href="#" class="btn-primary flex items-center justify-center gap-1.5 text-xs sm:text-sm px-3 sm:px-4 py-2 relative z-30" onclick="event.stopPropagation()">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <div class="flex flex-row gap-2 mb-2 sm:mb-3">
+                <a href="#" class="btn-primary flex items-center justify-center gap-1 text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 sm:py-2 relative z-30" onclick="event.stopPropagation()">
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                   </svg>
                   App Store
                 </a>
-                <a href="#" class="btn-secondary flex items-center justify-center gap-1.5 text-xs sm:text-sm px-3 sm:px-4 py-2 relative z-30" onclick="event.stopPropagation()">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <a href="#" class="btn-secondary flex items-center justify-center gap-1 text-[10px] sm:text-xs px-2 sm:px-3 py-1.5 sm:py-2 relative z-30" onclick="event.stopPropagation()">
+                  <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
                   </svg>
                   Google Play
                 </a>
               </div>
               
-              <p class="text-text-secondary text-sm">Every user 3D face liveness verified. Every message E2EE.</p>
+              <p class="text-text-secondary text-[10px] sm:text-xs">Every user 3D verified. Every message E2EE.</p>
             </div>
           </div>
         </div>
@@ -1643,6 +1643,33 @@ import '../styles/global.css';
   // Make function globally available
   (window as any).sendEncryptedMessage = sendEncryptedMessage;
   
+  // Mobile touch handling - deactivate hover effect after tap
+  const spaceBubble = document.getElementById('space-bubble');
+  let touchTimeout: ReturnType<typeof setTimeout> | null = null;
+  
+  if (spaceBubble) {
+    // Add a class to track active state on mobile
+    spaceBubble.addEventListener('touchstart', () => {
+      spaceBubble.classList.add('touch-active');
+      
+      // Clear any existing timeout
+      if (touchTimeout) clearTimeout(touchTimeout);
+      
+      // Auto-deactivate after 2 seconds on mobile
+      touchTimeout = setTimeout(() => {
+        spaceBubble.classList.remove('touch-active');
+      }, 2000);
+    });
+    
+    // Also deactivate on scroll
+    window.addEventListener('scroll', () => {
+      if (spaceBubble.classList.contains('touch-active')) {
+        spaceBubble.classList.remove('touch-active');
+        if (touchTimeout) clearTimeout(touchTimeout);
+      }
+    }, { passive: true });
+  }
+  
   // Step labels for the 11-step animation flow
   const stepLabels = [
     'Browse Spaces',       // 1. Spaces list with + button (no SoulMate)
@@ -1821,7 +1848,8 @@ import '../styles/global.css';
     transition: all 0.3s ease;
   }
   
-  #space-bubble:hover .big-bubble {
+  #space-bubble:hover .big-bubble,
+  #space-bubble.touch-active .big-bubble {
     box-shadow: 0 0 60px rgba(99, 102, 241, 0.2), inset 0 0 60px rgba(139, 92, 246, 0.1);
   }
   
@@ -2108,7 +2136,9 @@ import '../styles/global.css';
   }
   
   /* FULL AREA HOVER - hovering anywhere in #space-bubble triggers intense glow on BOTH bubbles */
-  #space-bubble:hover .bubble-1 {
+  /* Also support touch-active class for mobile */
+  #space-bubble:hover .bubble-1,
+  #space-bubble.touch-active .bubble-1 {
     border-color: rgba(99, 102, 241, 0.7) !important;
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.35), rgba(6, 182, 212, 0.25)) !important;
     box-shadow: 
@@ -2122,7 +2152,8 @@ import '../styles/global.css';
     animation: bubblePulseGlow 1.5s ease-in-out infinite;
   }
   
-  #space-bubble:hover .bubble-2 {
+  #space-bubble:hover .bubble-2,
+  #space-bubble.touch-active .bubble-2 {
     border-color: rgba(6, 182, 212, 0.7) !important;
     background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.25)) !important;
     box-shadow: 
@@ -2138,7 +2169,9 @@ import '../styles/global.css';
   
   /* Inner ring glow on container hover */
   #space-bubble:hover .bubble-1 > div:last-child,
-  #space-bubble:hover .bubble-2 > div:last-child {
+  #space-bubble:hover .bubble-2 > div:last-child,
+  #space-bubble.touch-active .bubble-1 > div:last-child,
+  #space-bubble.touch-active .bubble-2 > div:last-child {
     border-color: rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
   }
@@ -2164,7 +2197,8 @@ import '../styles/global.css';
     transition: all 0.3s ease;
   }
   
-  #space-bubble:hover .fusion-dot {
+  #space-bubble:hover .fusion-dot,
+  #space-bubble.touch-active .fusion-dot {
     opacity: 1;
   }
   
@@ -2205,22 +2239,28 @@ import '../styles/global.css';
     100% { transform: translate(-140px, 40px) scale(0); opacity: 0; }
   }
   
-  #space-bubble:hover .fusion-dot-1 {
+  #space-bubble:hover .fusion-dot-1,
+  #space-bubble.touch-active .fusion-dot-1 {
     animation: fusionMerge1 2s ease-in-out infinite;
   }
-  #space-bubble:hover .fusion-dot-2 {
+  #space-bubble:hover .fusion-dot-2,
+  #space-bubble.touch-active .fusion-dot-2 {
     animation: fusionMerge2 2.2s ease-in-out infinite 0.3s;
   }
-  #space-bubble:hover .fusion-dot-3 {
+  #space-bubble:hover .fusion-dot-3,
+  #space-bubble.touch-active .fusion-dot-3 {
     animation: fusionMerge3 1.8s ease-in-out infinite 0.5s;
   }
-  #space-bubble:hover .fusion-dot-4 {
+  #space-bubble:hover .fusion-dot-4,
+  #space-bubble.touch-active .fusion-dot-4 {
     animation: fusionMerge4 2.4s ease-in-out infinite 0.2s;
   }
-  #space-bubble:hover .fusion-dot-5 {
+  #space-bubble:hover .fusion-dot-5,
+  #space-bubble.touch-active .fusion-dot-5 {
     animation: fusionMerge5 2s ease-in-out infinite 0.7s;
   }
-  #space-bubble:hover .fusion-dot-6 {
+  #space-bubble:hover .fusion-dot-6,
+  #space-bubble.touch-active .fusion-dot-6 {
     animation: fusionMerge6 2.1s ease-in-out infinite 0.4s;
   }
   
