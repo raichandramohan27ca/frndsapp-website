@@ -4,21 +4,18 @@ import '../styles/global.css';
 ---
 
 <Layout title="FRNDSAPP - Find Your People. Verified. | 3D Face Verified | E2EE Everything">
-  <!-- Beta Announcement Banner -->
-  <div class="bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 border-b border-white/10 py-2 sm:py-2.5 px-3 sm:px-4 text-center mt-8 sm:mt-12 md:mt-16">
-    <p class="text-[11px] sm:text-sm text-white/90 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-      <span class="inline-flex items-center gap-1.5">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-        </span>
-        <span class="font-semibold text-white">Private Beta</span>
+  <!-- Beta Announcement Banner - compact single line -->
+  <div class="bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 border-b border-white/10 py-1.5 sm:py-2 px-3 sm:px-4 text-center mt-8 sm:mt-12 md:mt-16">
+    <p class="text-[11px] sm:text-sm text-white/90 flex items-center justify-center gap-1.5 sm:gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
       </span>
-      <span class="hidden sm:inline text-white/30">•</span>
-      <span class="text-white/70">Invite-only early access</span>
-      <span class="hidden sm:inline text-white/30">•</span>
-      <span class="text-white/70">Join waitlist →</span>
-      <a href="mailto:info@frndsapp.com" class="text-accent hover:text-white underline underline-offset-2 font-medium transition-colors">info@frndsapp.com</a>
+      <span class="font-semibold text-white">Private Beta</span>
+      <span class="text-white/40 hidden sm:inline">•</span>
+      <span class="hidden sm:inline text-white/70">Invite-only</span>
+      <span class="text-white/40">•</span>
+      <a href="mailto:info@frndsapp.com" class="text-accent hover:text-white font-medium transition-colors">Join waitlist</a>
     </p>
   </div>
 
@@ -273,11 +270,10 @@ import '../styles/global.css';
         </div>
         
         <!-- Right: Animated Phone Mockup - scroll down to see on mobile -->
-        <div id="phone-mockup-section" class="relative flex flex-col items-center justify-center lg:justify-end mt-8 lg:mt-0">
-          <!-- Scroll hint on mobile - clickable -->
-          <a href="#phone-mockup-section" class="lg:hidden text-center mb-4 cursor-pointer scroll-smooth" onclick="event.preventDefault(); document.getElementById('phone-mockup-section').scrollIntoView({behavior: 'smooth', block: 'start'});">
-            <p class="text-sm text-text-secondary animate-bounce">See how it works</p>
-            <p class="text-xl animate-bounce mt-1">👇</p>
+        <div id="phone-mockup-section" class="relative flex flex-col items-center justify-center lg:justify-end mt-6 lg:mt-0">
+          <!-- Scroll hint on mobile - just animated hand -->
+          <a href="#phone-mockup-section" class="lg:hidden text-center mb-2 cursor-pointer" onclick="event.preventDefault(); document.getElementById('phone-mockup-section').scrollIntoView({behavior: 'smooth', block: 'start'});">
+            <p class="text-2xl animate-bounce">👇</p>
           </a>
           <div class="phone-frame w-60 sm:w-64 md:w-72 animate-float glow">
             <div class="phone-screen aspect-[9/19] relative">
@@ -1892,7 +1888,12 @@ import '../styles/global.css';
     transition: all 0.3s ease;
   }
   
-  #space-bubble:hover .big-bubble,
+  /* Big bubble glow - desktop uses hover, mobile uses touch-active */
+  @media (hover: hover) {
+    #space-bubble:hover .big-bubble {
+      box-shadow: 0 0 60px rgba(99, 102, 241, 0.2), inset 0 0 60px rgba(139, 92, 246, 0.1);
+    }
+  }
   #space-bubble.touch-active .big-bubble {
     box-shadow: 0 0 60px rgba(99, 102, 241, 0.2), inset 0 0 60px rgba(139, 92, 246, 0.1);
   }
@@ -2180,8 +2181,44 @@ import '../styles/global.css';
   }
   
   /* FULL AREA HOVER - hovering anywhere in #space-bubble triggers intense glow on BOTH bubbles */
-  /* Also support touch-active class for mobile */
-  #space-bubble:hover .bubble-1,
+  /* Use @media (hover: hover) to only apply :hover on devices with mouse, not touch */
+  /* touch-active class is controlled by JavaScript for mobile */
+  @media (hover: hover) {
+    #space-bubble:hover .bubble-1 {
+      border-color: rgba(99, 102, 241, 0.7) !important;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.35), rgba(6, 182, 212, 0.25)) !important;
+      box-shadow: 
+        0 0 30px rgba(99, 102, 241, 0.5),
+        0 0 60px rgba(99, 102, 241, 0.4),
+        0 0 100px rgba(99, 102, 241, 0.3),
+        inset 0 0 40px rgba(99, 102, 241, 0.2);
+    }
+    #space-bubble:hover .bubble-2 {
+      border-color: rgba(6, 182, 212, 0.7) !important;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.25)) !important;
+      box-shadow: 
+        0 0 30px rgba(6, 182, 212, 0.5),
+        0 0 60px rgba(6, 182, 212, 0.4),
+        0 0 100px rgba(6, 182, 212, 0.3),
+        inset 0 0 40px rgba(6, 182, 212, 0.2);
+    }
+    #space-bubble:hover .bubble-1 > div:last-child,
+    #space-bubble:hover .bubble-2 > div:last-child {
+      border-color: rgba(255, 255, 255, 0.3) !important;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    }
+    #space-bubble:hover .fusion-dot {
+      opacity: 1;
+    }
+    #space-bubble:hover .fusion-dot-1 { animation: fusionMerge1 2s ease-in-out infinite; }
+    #space-bubble:hover .fusion-dot-2 { animation: fusionMerge2 2.2s ease-in-out infinite 0.3s; }
+    #space-bubble:hover .fusion-dot-3 { animation: fusionMerge3 1.8s ease-in-out infinite 0.5s; }
+    #space-bubble:hover .fusion-dot-4 { animation: fusionMerge4 2.4s ease-in-out infinite 0.2s; }
+    #space-bubble:hover .fusion-dot-5 { animation: fusionMerge5 2s ease-in-out infinite 0.7s; }
+    #space-bubble:hover .fusion-dot-6 { animation: fusionMerge6 2.1s ease-in-out infinite 0.4s; }
+  }
+  
+  /* Touch-active class for mobile - controlled by JavaScript */
   #space-bubble.touch-active .bubble-1 {
     border-color: rgba(99, 102, 241, 0.7) !important;
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.35), rgba(6, 182, 212, 0.25)) !important;
@@ -2196,7 +2233,6 @@ import '../styles/global.css';
     animation: bubblePulseGlow 1.5s ease-in-out infinite;
   }
   
-  #space-bubble:hover .bubble-2,
   #space-bubble.touch-active .bubble-2 {
     border-color: rgba(6, 182, 212, 0.7) !important;
     background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.25)) !important;
@@ -2211,9 +2247,7 @@ import '../styles/global.css';
     animation: bubblePulseGlow 1.5s ease-in-out infinite 0.3s;
   }
   
-  /* Inner ring glow on container hover */
-  #space-bubble:hover .bubble-1 > div:last-child,
-  #space-bubble:hover .bubble-2 > div:last-child,
+  /* Inner ring glow on touch-active */
   #space-bubble.touch-active .bubble-1 > div:last-child,
   #space-bubble.touch-active .bubble-2 > div:last-child {
     border-color: rgba(255, 255, 255, 0.3) !important;
@@ -2241,7 +2275,6 @@ import '../styles/global.css';
     transition: all 0.3s ease;
   }
   
-  #space-bubble:hover .fusion-dot,
   #space-bubble.touch-active .fusion-dot {
     opacity: 1;
   }
@@ -2283,27 +2316,21 @@ import '../styles/global.css';
     100% { transform: translate(-140px, 40px) scale(0); opacity: 0; }
   }
   
-  #space-bubble:hover .fusion-dot-1,
   #space-bubble.touch-active .fusion-dot-1 {
     animation: fusionMerge1 2s ease-in-out infinite;
   }
-  #space-bubble:hover .fusion-dot-2,
   #space-bubble.touch-active .fusion-dot-2 {
     animation: fusionMerge2 2.2s ease-in-out infinite 0.3s;
   }
-  #space-bubble:hover .fusion-dot-3,
   #space-bubble.touch-active .fusion-dot-3 {
     animation: fusionMerge3 1.8s ease-in-out infinite 0.5s;
   }
-  #space-bubble:hover .fusion-dot-4,
   #space-bubble.touch-active .fusion-dot-4 {
     animation: fusionMerge4 2.4s ease-in-out infinite 0.2s;
   }
-  #space-bubble:hover .fusion-dot-5,
   #space-bubble.touch-active .fusion-dot-5 {
     animation: fusionMerge5 2s ease-in-out infinite 0.7s;
   }
-  #space-bubble:hover .fusion-dot-6,
   #space-bubble.touch-active .fusion-dot-6 {
     animation: fusionMerge6 2.1s ease-in-out infinite 0.4s;
   }
