@@ -1,0 +1,174 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Join Spaces for dating, business, travel, hobbies - anything. Every user 3D face verified. Every message encrypted. Swipe right, start chatting instantly." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0F0F1A" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <title>{title}</title>
+  </head>
+  <body class="animated-gradient min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-dark-bg/80 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-20">
+          <!-- Logo - always visible -->
+          <a href="/" class="flex items-center gap-2 group relative z-50">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center font-display font-bold text-lg sm:text-xl group-hover:scale-110 transition-transform">
+              F
+            </div>
+            <span class="font-display font-bold text-base sm:text-xl">FRNDSAPP</span>
+          </a>
+          
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
+            <a href="/#features" class="text-text-secondary hover:text-white transition-colors text-sm lg:text-base">Features</a>
+            <a href="/#how-it-works" class="text-text-secondary hover:text-white transition-colors text-sm lg:text-base">How It Works</a>
+            <a href="/#security" class="text-text-secondary hover:text-white transition-colors text-sm lg:text-base">Security</a>
+            <a href="/#use-cases" class="text-text-secondary hover:text-white transition-colors text-sm lg:text-base">Use Cases</a>
+            <a href="/privacy" class="text-text-secondary hover:text-white transition-colors text-sm lg:text-base">Privacy</a>
+            <a href="https://github.com/frndsapp" target="_blank" class="text-text-secondary hover:text-white transition-colors text-sm lg:text-base">Open Source</a>
+          </div>
+          
+          <!-- CTA Button -->
+          <div class="hidden md:flex items-center gap-4">
+            <a href="#download" class="btn-primary flex items-center gap-2">
+              <span>Get the App</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-white" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu - fully solid background covering everything -->
+      <div id="mobile-menu" class="mobile-menu closed md:hidden fixed inset-0 top-16 z-50" style="background-color: #0F0F1A !important;">
+        <div class="flex flex-col pt-0 px-0 pb-4 gap-0 w-full h-full" style="background-color: #0F0F1A !important;">
+          <a href="/#features" class="text-lg py-4 px-6 border-b border-white/10 text-white block w-full" style="background-color: #0F0F1A;">Features</a>
+          <a href="/#how-it-works" class="text-lg py-4 px-6 border-b border-white/10 text-white block w-full" style="background-color: #0F0F1A;">How It Works</a>
+          <a href="/#security" class="text-lg py-4 px-6 border-b border-white/10 text-white block w-full" style="background-color: #0F0F1A;">Security</a>
+          <a href="/#use-cases" class="text-lg py-4 px-6 border-b border-white/10 text-white block w-full" style="background-color: #0F0F1A;">Use Cases</a>
+          <a href="/privacy" class="text-lg py-4 px-6 border-b border-white/10 text-white block w-full" style="background-color: #0F0F1A;">Privacy</a>
+          <a href="https://github.com/frndsapp" target="_blank" class="text-lg py-4 px-6 border-b border-white/10 text-white block w-full" style="background-color: #0F0F1A;">Open Source</a>
+          <a href="#download" class="btn-primary text-center mt-6 mx-6 hidden sm:block">Get the App</a>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+      <slot />
+    </main>
+    
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-dark-bg/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <!-- Brand -->
+          <div class="col-span-2 md:col-span-1">
+            <a href="/" class="flex items-center gap-2 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center font-display font-bold text-xl">
+                F
+              </div>
+              <span class="font-display font-bold text-xl">FRNDSAPP</span>
+            </a>
+            <p class="text-text-secondary text-sm">Find Your People. Verified.</p>
+          </div>
+          
+          <!-- Product -->
+          <div>
+            <h4 class="font-display font-semibold mb-4">Product</h4>
+            <ul class="space-y-2 text-text-secondary text-sm">
+              <li><a href="/#features" class="hover:text-white transition-colors">Features</a></li>
+              <li><a href="/#security" class="hover:text-white transition-colors">Security</a></li>
+              <li><a href="/#use-cases" class="hover:text-white transition-colors">Use Cases</a></li>
+              <li><a href="#download" class="hover:text-white transition-colors">Download</a></li>
+            </ul>
+          </div>
+          
+          <!-- Company -->
+          <div>
+            <h4 class="font-display font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-text-secondary text-sm">
+              <li><a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="mailto:hello@frndsapp.com" class="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          
+          <!-- Developers -->
+          <div>
+            <h4 class="font-display font-semibold mb-4">Developers</h4>
+            <ul class="space-y-2 text-text-secondary text-sm">
+              <li><a href="https://github.com/frndsapp" target="_blank" class="hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://github.com/frndsapp" target="_blank" class="hover:text-white transition-colors">Documentation</a></li>
+              <li><a href="mailto:security@frndsapp.com" class="hover:text-white transition-colors">Report a Bug</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Bottom -->
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-text-secondary text-sm">© 2026 FRNDSAPP. All rights reserved.</p>
+          <div class="flex items-center gap-6">
+            <a href="https://github.com/frndsapp" target="_blank" class="text-text-secondary hover:text-white transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="https://twitter.com/frndsapp" target="_blank" class="text-text-secondary hover:text-white transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('closed');
+        mobileMenu?.classList.toggle('open');
+      });
+      
+      // Close menu on link click
+      mobileMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('closed');
+          mobileMenu?.classList.remove('open');
+        });
+      });
+    </script>
+  </body>
+</html>

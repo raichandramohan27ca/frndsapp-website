@@ -1,0 +1,469 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Privacy Policy - FRNDSAPP" description="FRNDSAPP Privacy Policy. We literally CANNOT see your data. This is by design, not policy.">
+  <section class="pt-32 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="section-heading mb-4">
+          <span class="gradient-text">Privacy Policy</span>
+        </h1>
+        <p class="text-text-secondary">Last Updated: January 2026</p>
+      </div>
+      
+      <!-- Intro -->
+      <div class="glass-card p-6 md:p-8 mb-12 border-l-4 border-primary">
+        <h2 class="font-display font-bold text-xl mb-4">Our Privacy Promise</h2>
+        <p class="text-xl text-accent italic mb-4">"We literally CANNOT see your data. This is by design, not policy."</p>
+        <p class="text-text-secondary">
+          Unlike other apps that promise privacy but hold your data, FRNDSAPP is architecturally designed so that we CANNOT access your private information — even if we wanted to, even if compelled.
+        </p>
+      </div>
+      
+      <!-- Content -->
+      <div class="prose prose-invert max-w-none space-y-12">
+        
+        <!-- Section 1 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-lg">1</span>
+            What We Collect (Minimal)
+          </h2>
+          
+          <div class="space-y-6">
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Account Information</h3>
+              <ul class="text-text-secondary space-y-2">
+                <li>• Email or phone number (for authentication only)</li>
+                <li>• Your chosen display name</li>
+                <li>• Profile pictures (verified against your face)</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Verification Data</h3>
+              <ul class="text-text-secondary space-y-2">
+                <li>• 3D face liveness scan (stored securely, used ONLY for verification)</li>
+                <li>• This ensures no fake accounts and validates your profile pictures</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Space Participation</h3>
+              <ul class="text-text-secondary space-y-2">
+                <li>• Which Spaces you join</li>
+                <li>• Your public profile in those Spaces</li>
+                <li>• Your matching preferences (used for AI matching)</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Location (Optional, Privacy-Preserved)</h3>
+              <ul class="text-text-secondary space-y-2">
+                <li>• Approximate area for nearby matching (geohash, not exact coordinates)</li>
+                <li>• We show "3.2 km away" — NEVER your exact location</li>
+                <li>• You control when to share location</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 2 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-lg">2</span>
+            What We CANNOT See (By Design)
+          </h2>
+          
+          <div class="glass-card p-6 border border-green-500/30">
+            <h3 class="font-display font-semibold text-lg mb-4 text-green-400">End-to-End Encrypted Content</h3>
+            <p class="text-text-secondary mb-4">
+              ALL of the following are encrypted on YOUR device and can ONLY be decrypted by the intended recipient:
+            </p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                'Text messages — We see encrypted blobs only',
+                'Photos you share — Encrypted before upload',
+                'Videos you share — Encrypted before upload',
+                'Files & documents — Encrypted before upload',
+                'Voice messages — Encrypted before upload',
+                'Location sharing — Encrypted coordinates',
+                'Audio calls — WebRTC E2EE, we never hear',
+                'Video calls — WebRTC E2EE, we never see',
+              ].map((item) => (
+                <div class="flex items-start gap-2">
+                  <span class="text-green-400">✓</span>
+                  <span class="text-text-secondary text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p class="text-accent mt-4 text-sm">
+              We use the Signal Protocol — the same encryption trusted by journalists, activists, and security professionals worldwide.
+            </p>
+          </div>
+          
+          <div class="glass-card p-6 mt-6 border border-purple-500/30">
+            <h3 class="font-display font-semibold text-lg mb-3 text-purple-400">OTS (One-Time Secure) Messages</h3>
+            <p class="text-text-secondary">These are EXTRA secure:</p>
+            <ul class="text-text-secondary mt-2 space-y-1 text-sm">
+              <li>• Encrypted end-to-end</li>
+              <li>• Camera verifies recipient in real-time</li>
+              <li>• Auto-delete after viewing</li>
+              <li>• We have ZERO access to content</li>
+            </ul>
+          </div>
+        </section>
+        
+        <!-- Section 3 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-lg">3</span>
+            Contact Sync — Hash Only
+          </h2>
+          
+          <div class="glass-card p-6 bg-dark-surface/50">
+            <h3 class="font-display font-semibold text-lg mb-4">How Contact Sync Works</h3>
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center text-xs">1</span>
+                <span class="text-text-secondary">Your phone hashes each contact (one-way encryption)</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center text-xs">2</span>
+                <span class="text-text-secondary">Only hash values are sent to our servers</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center text-xs">3</span>
+                <span class="text-text-secondary">We compare hashes with registered user hashes</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center text-xs">4</span>
+                <span class="text-text-secondary">We return: "These hashes match existing users"</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/30 flex items-center justify-center text-xs">5</span>
+                <span class="text-text-secondary">Your app shows: "These contacts are on FRNDSAPP"</span>
+              </div>
+            </div>
+            <div class="mt-4 p-3 bg-accent/10 rounded-lg">
+              <p class="text-accent text-sm font-medium">RESULT: We NEVER see names, numbers, or any contact info. We literally cannot extract your contact list from hashes.</p>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 4 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-lg">4</span>
+            3D Face Verification
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Why We Do It</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Ensures every user is a real human</li>
+                <li>• Prevents fake profiles and catfishing</li>
+                <li>• Validates that profile pictures are actually YOU</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">How It Works</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• One-time 3D liveness scan at registration</li>
+                <li>• Checks: depth, movement, blink, anti-spoofing</li>
+                <li>• No photos of photos, no masks, no screens</li>
+                <li>• Stored securely, used ONLY for verification</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="glass-card p-5 mt-6">
+            <h3 class="font-display font-semibold text-lg mb-3">Profile Picture Verification</h3>
+            <ul class="text-text-secondary space-y-2 text-sm">
+              <li>• Every profile pic is compared to your verified face</li>
+              <li>• If the face doesn't match, the picture is rejected</li>
+              <li>• This prevents catfishing and fake photos</li>
+            </ul>
+          </div>
+        </section>
+        
+        <!-- Section 5 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center text-lg">5</span>
+            Location Privacy
+          </h2>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">What We Know</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Approximate area (geohash) for nearby matching</li>
+                <li>• Example: "Downtown Seattle area" — NOT your address</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">What We Show Others</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Distance only: "3.2 km away"</li>
+                <li>• NEVER your exact coordinates</li>
+                <li>• NEVER your address or precise location</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">You Control It</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Location sharing is optional</li>
+                <li>• You can disable it anytime</li>
+                <li>• Spaces work without location too</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 6 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-lg">6</span>
+            Data Storage & Security
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Where Data Lives</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Encrypted messages: On your device + encrypted backup</li>
+                <li>• Account data: Secure cloud infrastructure</li>
+                <li>• Face verification: Encrypted, isolated storage</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Security Measures</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• All data encrypted at rest</li>
+                <li>• TLS encryption in transit</li>
+                <li>• Regular security audits</li>
+                <li>• No third-party analytics that track you</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 7 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-lg">7</span>
+            What We DON'T Do
+          </h2>
+          
+          <div class="glass-card p-6">
+            <div class="grid sm:grid-cols-2 gap-4">
+              {[
+                'We don\'t sell your data — We have nothing to sell',
+                'We don\'t show targeted ads — We can\'t, we don\'t have your data',
+                'We don\'t read your messages — We literally cannot',
+                'We don\'t share with third parties — Nothing to share',
+                'We don\'t mine your contacts — We only see hashes',
+                'We don\'t track your location history — Only current for matching',
+                'We don\'t store message content — It\'s E2EE, we only see blobs',
+              ].map((item) => (
+                <div class="flex items-start gap-2">
+                  <span class="text-red-400">❌</span>
+                  <span class="text-text-secondary text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 8 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-lg">8</span>
+            Your Rights
+          </h2>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Access Your Data</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Export your account information anytime</li>
+                <li>• See which Spaces you're in</li>
+                <li>• View your profile data</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Delete Your Data</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Delete your account completely</li>
+                <li>• All your data is removed</li>
+                <li>• Messages you sent remain encrypted (others keep their copy)</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card p-5">
+              <h3 class="font-display font-semibold text-lg mb-3">Control Your Privacy</h3>
+              <ul class="text-text-secondary space-y-2 text-sm">
+                <li>• Adjust location sharing</li>
+                <li>• Control who can message you</li>
+                <li>• Block users instantly</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 9 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-lg">9</span>
+            Open Source Transparency
+          </h2>
+          
+          <div class="glass-card p-6">
+            <p class="text-text-secondary mb-4">Our frontend code is fully open source:</p>
+            <ul class="text-text-secondary space-y-2 text-sm mb-6">
+              <li>• GitHub: <a href="https://github.com/frndsapp" class="text-accent hover:underline">github.com/frndsapp</a></li>
+              <li>• Audit our encryption implementation</li>
+              <li>• Verify our privacy claims</li>
+              <li>• Report security issues</li>
+            </ul>
+            <p class="text-xl text-accent italic">"Don't trust us — VERIFY us."</p>
+          </div>
+        </section>
+        
+        <!-- Section 10 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-lg">10</span>
+            OTS Messages — Extra Privacy
+          </h2>
+          
+          <div class="glass-card p-6 border border-purple-500/30">
+            <h3 class="font-display font-semibold text-lg mb-4 text-purple-400">OTS Message Privacy</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {[
+                { icon: '📷', text: 'Camera activates to verify recipient' },
+                { icon: '👤', text: 'Only YOUR verified face can unlock' },
+                { icon: '🚫', text: 'Blocks if you look away or move' },
+                { icon: '⚠️', text: 'Deletes if anyone else appears' },
+                { icon: '📱', text: 'Works only on primary device' },
+                { icon: '📸', text: 'Gray patterns blur screenshot attempts' },
+                { icon: '🔔', text: 'Sender notified if screenshot detected' },
+                { icon: '💨', text: 'Auto-deletes after viewing' },
+              ].map((item) => (
+                <div class="flex items-start gap-3">
+                  <span class="text-xl">{item.icon}</span>
+                  <span class="text-text-secondary text-sm">{item.text}</span>
+                </div>
+              ))}
+            </div>
+            <div class="mt-6 p-3 bg-purple-500/10 rounded-lg">
+              <p class="text-purple-400 text-sm font-medium">RESULT: The most private way to share sensitive information.</p>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Section 11 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center text-lg">11</span>
+            Children's Privacy
+          </h2>
+          
+          <div class="glass-card p-5">
+            <p class="text-text-secondary">
+              FRNDSAPP is not intended for users under 18. 3D face verification helps ensure age-appropriate usage.
+            </p>
+          </div>
+        </section>
+        
+        <!-- Section 12 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-lg">12</span>
+            Changes to This Policy
+          </h2>
+          
+          <div class="glass-card p-5">
+            <p class="text-text-secondary mb-3">We'll notify you of significant changes via:</p>
+            <ul class="text-text-secondary space-y-2 text-sm">
+              <li>• In-app notification</li>
+              <li>• Email (if provided)</li>
+            </ul>
+          </div>
+        </section>
+        
+        <!-- Section 13 -->
+        <section>
+          <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-lg">13</span>
+            Contact Us
+          </h2>
+          
+          <div class="glass-card p-5">
+            <p class="text-text-secondary mb-3">Questions about privacy?</p>
+            <ul class="text-text-secondary space-y-2">
+              <li>• Email: <a href="mailto:privacy@frndsapp.com" class="text-accent hover:underline">privacy@frndsapp.com</a></li>
+              <li>• GitHub Issues: For security researchers</li>
+            </ul>
+          </div>
+        </section>
+        
+        <!-- Summary -->
+        <section class="mt-16">
+          <h2 class="font-display font-bold text-2xl mb-6 text-center">
+            <span class="gradient-text">Summary: The FRNDSAPP Privacy Difference</span>
+          </h2>
+          
+          <div class="glass-card p-6 overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="text-left py-3 px-4 text-red-400">What Others Do</th>
+                  <th class="text-left py-3 px-4 text-green-400">What FRNDSAPP Does</th>
+                </tr>
+              </thead>
+              <tbody class="text-text-secondary">
+                <tr class="border-b border-white/5">
+                  <td class="py-3 px-4">Store your messages</td>
+                  <td class="py-3 px-4">Can't read them (E2EE)</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 px-4">See your contacts</td>
+                  <td class="py-3 px-4">Only see hashes</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 px-4">Track exact location</td>
+                  <td class="py-3 px-4">Only approximate area</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 px-4">Allow fake profiles</td>
+                  <td class="py-3 px-4">3D face verified only</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 px-4">Sell your data</td>
+                  <td class="py-3 px-4">Have nothing to sell</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">Promise privacy</td>
+                  <td class="py-3 px-4">Prove it with open source</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <p class="text-center text-xl text-accent italic mt-8">"Privacy isn't our policy. It's our architecture."</p>
+        </section>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,2432 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout title="FRNDSAPP - Find Your People. Verified. | 3D Face Verified | E2EE Everything">
+  <!-- Hero Section -->
+  <section class="relative flex items-center pt-16 overflow-visible">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 md:pt-10 pb-4 md:pb-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
+        <!-- Left Content with Two Overlapping Space Bubbles -->
+        <div class="text-center lg:text-left relative overflow-visible pt-6 sm:pt-8 md:pt-0">
+          <!-- Two Floating Overlapping Bubbles - scales down on mobile -->
+          <div id="space-bubble" class="relative cursor-pointer transform scale-[0.85] sm:scale-90 md:scale-100 origin-center sm:origin-top-left" onclick="sendEncryptedMessage()">
+            
+            <!-- Fusion Dots - appear and merge on hover -->
+            <div class="fusion-dot fusion-dot-1 bg-primary" style="top: 5%; left: 20%;"></div>
+            <div class="fusion-dot fusion-dot-2 bg-accent" style="top: 15%; right: 10%;"></div>
+            <div class="fusion-dot fusion-dot-3 bg-secondary" style="top: 60%; left: 5%;"></div>
+            <div class="fusion-dot fusion-dot-4 bg-cyan-400" style="top: 80%; right: 25%;"></div>
+            <div class="fusion-dot fusion-dot-5 bg-purple-400" style="top: 35%; left: -5%;"></div>
+            <div class="fusion-dot fusion-dot-6 bg-white" style="top: 50%; right: 0%;"></div>
+            <div class="fusion-dot fusion-dot-1 bg-accent" style="top: 90%; left: 30%;"></div>
+            <div class="fusion-dot fusion-dot-2 bg-primary" style="top: 25%; left: 45%;"></div>
+            <div class="fusion-dot fusion-dot-3 bg-white/80" style="top: 70%; right: 5%;"></div>
+            <div class="fusion-dot fusion-dot-4 bg-secondary" style="top: 10%; right: 35%;"></div>
+            
+            <!-- Bubble 1 - Larger, behind -->
+            <div class="bubble-1 absolute -top-6 -left-4 sm:-top-10 sm:-left-8 w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full bg-gradient-to-br from-primary/10 via-secondary/12 to-accent/10 border-2 border-white/10 backdrop-blur-[2px] animate-float-bubble-1 transition-all duration-500 cursor-pointer">
+              <!-- Stars inside bubble 1 -->
+              <div class="absolute top-[20%] left-[25%] w-2 h-2 bg-white rounded-full animate-twinkle-1"></div>
+              <div class="absolute top-[60%] left-[15%] w-1.5 h-1.5 bg-cyan-400 rounded-full animate-twinkle-2"></div>
+              <div class="absolute top-[40%] right-[20%] text-lg animate-float-slow">🚀</div>
+              <div class="absolute bottom-[25%] left-[30%] text-sm animate-float-slow-reverse">✨</div>
+              <!-- Inner glow ring -->
+              <div class="absolute inset-3 rounded-full border border-white/5 transition-all duration-500"></div>
+            </div>
+            
+            <!-- Bubble 2 - Smaller, in front, overlapping -->
+            <div class="bubble-2 absolute top-16 -right-2 sm:top-20 sm:-right-6 md:top-24 md:-right-8 w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-accent/10 via-primary/12 to-secondary/10 border-2 border-white/10 backdrop-blur-[2px] animate-float-bubble-2 transition-all duration-500 z-10 cursor-pointer">
+              <!-- Stars inside bubble 2 -->
+              <div class="absolute top-[30%] right-[25%] w-1.5 h-1.5 bg-purple-400 rounded-full animate-twinkle-3"></div>
+              <div class="absolute bottom-[35%] right-[35%] w-2 h-2 bg-white rounded-full animate-twinkle-1"></div>
+              <div class="absolute top-[55%] left-[20%] text-base animate-float-slow">🛸</div>
+              <div class="absolute top-[25%] left-[35%] text-sm animate-float-slow-reverse">⭐</div>
+              <!-- Inner glow ring -->
+              <div class="absolute inset-3 rounded-full border border-white/5 transition-all duration-500"></div>
+            </div>
+            
+            <!-- SITTING Astronaut on Rocket - At LEFT edge of first bubble (safe area) -->
+            <div id="astronaut-sitting" class="astronaut-unit absolute z-30" style="left: -10%; top: -5%;">
+              <svg class="w-10 h-14 sm:w-12 sm:h-16 md:w-14 md:h-20 drop-shadow-[0_0_12px_rgba(99,102,241,0.5)]" viewBox="0 0 80 130" fill="none">
+                <!-- ROCKET -->
+                <ellipse cx="40" cy="85" rx="12" ry="30" fill="url(#rocketBody)" stroke="#CBD5E1" stroke-width="1"/>
+                <!-- Rocket nose -->
+                <path d="M28 58 L40 30 L52 58 Z" fill="#F97316"/>
+                <path d="M32 58 L40 38 L48 58 Z" fill="#FBBF24"/>
+                <!-- Rocket window -->
+                <circle cx="40" cy="72" r="5" fill="#1E3A5F" stroke="#60A5FA" stroke-width="1.5"/>
+                <!-- Rocket fins -->
+                <path d="M28 100 L18 118 L28 110 Z" fill="#F97316"/>
+                <path d="M52 100 L62 118 L52 110 Z" fill="#F97316"/>
+                <!-- Rocket flames -->
+                <g class="rocket-flames opacity-0">
+                  <ellipse cx="40" cy="118" rx="8" ry="10" fill="#FBBF24"/>
+                  <ellipse cx="40" cy="122" rx="5" ry="8" fill="#F97316"/>
+                  <ellipse cx="40" cy="126" rx="3" ry="5" fill="#EF4444"/>
+                </g>
+                
+                <!-- ASTRONAUT SITTING ON ROCKET -->
+                <!-- Helmet -->
+                <circle cx="40" cy="20" r="16" fill="white" stroke="#CBD5E1" stroke-width="2"/>
+                <!-- Visor - Blue reflective -->
+                <ellipse cx="40" cy="22" rx="11" ry="10" fill="url(#visorBlue)"/>
+                <ellipse cx="35" cy="18" rx="4" ry="3" fill="rgba(255,255,255,0.4)"/>
+                
+                <!-- Body sitting -->
+                <ellipse cx="40" cy="45" rx="14" ry="12" fill="white" stroke="#CBD5E1" stroke-width="2"/>
+                <!-- Chest buttons -->
+                <circle cx="36" cy="44" r="2" fill="#6366F1"/>
+                <circle cx="44" cy="44" r="2" fill="#06B6D4"/>
+                
+                <!-- Arms holding rocket -->
+                <ellipse cx="24" cy="52" rx="5" ry="8" fill="white" stroke="#CBD5E1" stroke-width="1.5"/>
+                <ellipse cx="56" cy="52" rx="5" ry="8" fill="white" stroke="#CBD5E1" stroke-width="1.5"/>
+                
+                <!-- Legs straddling rocket -->
+                <ellipse cx="30" cy="62" rx="6" ry="10" fill="white" stroke="#CBD5E1" stroke-width="1.5" transform="rotate(-15 30 62)"/>
+                <ellipse cx="50" cy="62" rx="6" ry="10" fill="white" stroke="#CBD5E1" stroke-width="1.5" transform="rotate(15 50 62)"/>
+                <!-- Boots -->
+                <ellipse cx="24" cy="70" rx="5" ry="4" fill="#374151"/>
+                <ellipse cx="56" cy="70" rx="5" ry="4" fill="#374151"/>
+                
+                <defs>
+                  <linearGradient id="rocketBody" x1="28" y1="55" x2="52" y2="115">
+                    <stop offset="0%" stop-color="#F8FAFC"/>
+                    <stop offset="100%" stop-color="#E2E8F0"/>
+                  </linearGradient>
+                  <linearGradient id="visorBlue" x1="29" y1="12" x2="51" y2="32">
+                    <stop offset="0%" stop-color="#1E3A5F"/>
+                    <stop offset="50%" stop-color="#3B82F6"/>
+                    <stop offset="100%" stop-color="#1E40AF"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            
+            <!-- HANGING Astronaut with Jetpack - At RIGHT edge of second bubble -->
+            <div id="astronaut-hanging" class="astronaut-unit absolute z-30 right-[-5%] bottom-[25%] sm:right-[0%] sm:bottom-[8%]">
+              <svg class="w-10 h-12 sm:w-12 sm:h-14 md:w-14 md:h-16 drop-shadow-[0_0_12px_rgba(236,72,153,0.5)]" viewBox="0 0 80 110" fill="none">
+                <!-- ASTRONAUT HANGING/FLOATING with jetpack -->
+                <!-- Helmet -->
+                <circle cx="40" cy="22" r="18" fill="white" stroke="#F9A8D4" stroke-width="2"/>
+                <!-- Visor - Pink reflective -->
+                <ellipse cx="40" cy="24" rx="12" ry="11" fill="url(#visorPink)"/>
+                <ellipse cx="34" cy="19" rx="4" ry="3" fill="rgba(255,255,255,0.4)"/>
+                
+                <!-- Body -->
+                <ellipse cx="40" cy="52" rx="16" ry="18" fill="white" stroke="#F9A8D4" stroke-width="2"/>
+                <!-- Chest panel -->
+                <rect x="30" y="44" width="20" height="12" rx="3" fill="#FDF2F8" stroke="#FCE7F3" stroke-width="1"/>
+                <circle cx="36" cy="49" r="2" fill="#EC4899"/>
+                <circle cx="44" cy="49" r="2" fill="#A855F7"/>
+                
+                <!-- Jetpack on back -->
+                <rect x="56" y="42" width="12" height="22" rx="3" fill="#FCE7F3" stroke="#F9A8D4" stroke-width="1.5"/>
+                <rect x="58" y="46" width="3" height="6" rx="1" fill="#EC4899"/>
+                <rect x="63" y="46" width="3" height="6" rx="1" fill="#A855F7"/>
+                <circle cx="62" cy="58" r="2" fill="#EC4899"/>
+                <!-- Jetpack flames -->
+                <g class="jetpack-flames opacity-0">
+                  <ellipse cx="59" cy="68" rx="3" ry="6" fill="#F472B6"/>
+                  <ellipse cx="59" cy="72" rx="2" ry="4" fill="#EC4899"/>
+                  <ellipse cx="65" cy="68" rx="3" ry="6" fill="#F472B6"/>
+                  <ellipse cx="65" cy="72" rx="2" ry="4" fill="#EC4899"/>
+                </g>
+                
+                <!-- Arms (one reaching out) -->
+                <ellipse cx="20" cy="48" rx="6" ry="10" fill="white" stroke="#F9A8D4" stroke-width="1.5" transform="rotate(-20 20 48)"/>
+                <circle cx="14" cy="42" r="5" fill="white" stroke="#F9A8D4" stroke-width="1.5"/>
+                <ellipse cx="58" cy="54" rx="5" ry="8" fill="white" stroke="#F9A8D4" stroke-width="1.5" transform="rotate(15 58 54)"/>
+                <circle cx="62" cy="60" r="4" fill="white" stroke="#F9A8D4" stroke-width="1.5"/>
+                
+                <!-- Legs dangling -->
+                <ellipse cx="32" cy="76" rx="7" ry="12" fill="white" stroke="#F9A8D4" stroke-width="1.5" transform="rotate(-10 32 76)"/>
+                <ellipse cx="48" cy="78" rx="7" ry="12" fill="white" stroke="#F9A8D4" stroke-width="1.5" transform="rotate(15 48 78)"/>
+                <!-- Boots -->
+                <ellipse cx="28" cy="88" rx="6" ry="4" fill="#374151"/>
+                <ellipse cx="54" cy="90" rx="6" ry="4" fill="#374151"/>
+                
+                <defs>
+                  <linearGradient id="visorPink" x1="28" y1="13" x2="52" y2="35">
+                    <stop offset="0%" stop-color="#831843"/>
+                    <stop offset="50%" stop-color="#EC4899"/>
+                    <stop offset="100%" stop-color="#A855F7"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            
+            <!-- Flying E2EE Message - envelope with shield between astronauts -->
+            <div id="flying-message" class="absolute z-50 opacity-0 pointer-events-none" style="left: 0; top: 50%;">
+              <div class="relative flex items-center gap-1.5 bg-gradient-to-r from-primary via-secondary to-accent px-3 py-1.5 rounded-xl shadow-xl shadow-primary/50 border border-white/30">
+                <!-- Envelope with lock icon -->
+                <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="6" width="20" height="14" rx="2" fill="currentColor" opacity="0.9"/>
+                  <path d="M2 8l10 6 10-6" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="12" cy="15" r="2" fill="#06B6D4"/>
+                  <rect x="11" y="15" width="2" height="2" fill="#06B6D4"/>
+                </svg>
+                <span class="text-xs text-white font-bold tracking-wide">E2EE</span>
+                <!-- Sparkle effect -->
+                <div class="absolute -top-1 -right-1 w-3 h-3 text-yellow-300 animate-ping">✦</div>
+              </div>
+            </div>
+            
+            <!-- Small floating stars -->
+            <div class="absolute -left-2 top-24 text-xs animate-twinkle-1 text-yellow-300">⭐</div>
+            <div class="absolute -left-10 top-10 text-sm animate-twinkle-2 text-cyan-400">✦</div>
+            <div class="absolute -right-2 bottom-28 text-xs animate-twinkle-3 text-pink-300">⭐</div>
+            <div class="absolute -right-10 bottom-14 text-sm animate-twinkle-1 text-purple-400">✦</div>
+            
+            
+            <!-- Content - Clean and properly spaced -->
+            <div class="relative z-20 py-3 sm:py-4 px-3 sm:px-5 mt-2">
+              <!-- App Category Badge - shifts right on large screens -->
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-3 lg:ml-32 xl:ml-40">
+                <span class="text-sm">💬</span>
+                <span class="text-xs sm:text-sm text-text-secondary">Next-Gen Messaging</span>
+              </div>
+              
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight mb-3 whitespace-nowrap">
+                <span class="gradient-text">Connect in Space</span>
+                <!-- Secure Message Shield Icon -->
+                <span id="security-lock" class="inline-block ml-1 relative align-middle">
+                  <svg class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 inline-block" viewBox="0 0 24 24" fill="none">
+                    <!-- Shield shape -->
+                    <path d="M12 2L4 6v6c0 5.25 3.4 10.15 8 11.45 4.6-1.3 8-6.2 8-11.45V6l-8-4z" fill="url(#shieldGrad)" stroke="#A78BFA" stroke-width="1"/>
+                    <!-- Message envelope inside shield -->
+                    <rect x="7" y="9" width="10" height="7" rx="1" fill="#1e1b4b" stroke="#A78BFA" stroke-width="0.8"/>
+                    <path d="M7 10l5 3 5-3" stroke="#06B6D4" stroke-width="1" stroke-linecap="round"/>
+                    <!-- Lock on envelope -->
+                    <circle cx="12" cy="14" r="1.5" fill="#06B6D4"/>
+                    <defs>
+                      <linearGradient id="shieldGrad" x1="4" y1="2" x2="20" y2="20">
+                        <stop offset="0%" stop-color="#6366F1"/>
+                        <stop offset="100%" stop-color="#8B5CF6"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div id="lock-glow" class="absolute inset-0 opacity-0 pointer-events-none">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/50 via-accent/50 to-secondary/50 blur-xl rounded-full"></div>
+                  </div>
+                </span>
+              </h1>
+              
+              <p class="text-sm sm:text-base lg:text-lg text-white/90 font-medium mb-1">
+                Space has no boundaries. Neither do possibilities.
+              </p>
+              <p class="text-sm sm:text-base text-text-secondary mb-3">
+                Join Spaces for dating, business, travel — anything.
+              </p>
+              
+              <!-- Create your own -->
+              <p class="text-accent text-xs sm:text-sm mb-4 font-medium">
+                Can't find the right Space? <span class="underline decoration-dotted underline-offset-4">Create your own!</span> ✨
+              </p>
+              
+              <!-- App Store Buttons -->
+              <div class="flex flex-row gap-2 mb-3">
+                <a href="#" class="btn-primary flex items-center justify-center gap-1.5 text-xs sm:text-sm px-3 sm:px-4 py-2 relative z-30" onclick="event.stopPropagation()">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                  App Store
+                </a>
+                <a href="#" class="btn-secondary flex items-center justify-center gap-1.5 text-xs sm:text-sm px-3 sm:px-4 py-2 relative z-30" onclick="event.stopPropagation()">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
+                  </svg>
+                  Google Play
+                </a>
+              </div>
+              
+              <p class="text-text-secondary text-sm">Every user 3D face liveness verified. Every message E2EE.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right: Animated Phone Mockup -->
+        <div class="relative flex justify-center lg:justify-end mt-2 lg:mt-0">
+          <div class="phone-frame w-64 sm:w-72 animate-float glow">
+            <div class="phone-screen aspect-[9/19] relative">
+              <!-- Phone Notch -->
+              <div class="phone-notch absolute top-0 left-1/2 -translate-x-1/2 z-20"></div>
+              
+              <!-- Animated Content Container -->
+              <div id="phone-animation" class="absolute inset-0 pt-8 overflow-hidden">
+                
+                <!-- STEP 1: Browse Spaces with Footer Tabs -->
+                <div class="animation-frame active" data-step="1">
+                  <div class="p-3 pb-14 h-full flex flex-col">
+                    <!-- Catchy Create Space Banner -->
+                    <div class="glass-card p-2.5 mb-2 border border-primary/30 bg-gradient-to-r from-primary/10 to-accent/10 relative overflow-hidden">
+                      <div class="absolute top-0 right-0 w-12 h-12 opacity-20">
+                        <span class="text-3xl">🌌</span>
+                      </div>
+                      <p class="text-[10px] text-text-secondary">Can't find your Space?</p>
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <p class="text-xs font-bold gradient-text">Create Your Own! ✨</p>
+                          <p class="text-[9px] text-text-secondary italic">Space is infinite. So are possibilities.</p>
+                        </div>
+                        <button class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/30">
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <!-- Search Bar -->
+                    <div class="glass-card p-1.5 mb-2 flex items-center gap-2">
+                      <span class="text-text-secondary text-xs">🔍</span>
+                      <span class="text-[10px] text-text-secondary">Search spaces...</span>
+                    </div>
+                    
+                    <!-- Space List -->
+                    <div class="flex-1 space-y-1 overflow-hidden">
+                      <div class="glass-card p-2 flex items-center gap-2 border border-cyan-500/30 bg-cyan-500/5">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-sm">✈️</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Flight Assist</h4>
+                          <p class="text-[9px] text-text-secondary">1.2k members</p>
+                        </div>
+                        <span class="text-[10px] text-cyan-400">→</span>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2 opacity-80">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-sm">💼</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Deal Room</h4>
+                          <p class="text-[9px] text-text-secondary">3.8k members</p>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2 opacity-80">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-sm">⚡</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Charge Share</h4>
+                          <p class="text-[9px] text-text-secondary">890 members</p>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2 opacity-80">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-sm">📚</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Study Squad</h4>
+                          <p class="text-[9px] text-text-secondary">2.1k members</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Footer Tabs -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-dark-bg/90 backdrop-blur-sm border-t border-white/10 px-2 py-2">
+                      <div class="flex justify-around">
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">💬</span>
+                          <span class="text-[8px] text-text-secondary">Chats</span>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">📍</span>
+                          <span class="text-[8px] text-text-secondary">Nearby</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                          <span class="text-sm">🌌</span>
+                          <span class="text-[8px] text-primary font-medium">Spaces</span>
+                          <div class="w-1 h-1 rounded-full bg-primary mt-0.5"></div>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">📞</span>
+                          <span class="text-[8px] text-text-secondary">Calls</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 2: Join Flight Assist - AI Questions -->
+                <div class="animation-frame" data-step="2">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="glass-card p-3 mb-3 flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
+                        ✈️
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-medium text-sm">Flight Assist</h4>
+                        <p class="text-xs text-text-secondary">Airport helpers</p>
+                      </div>
+                      <span class="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full">Joining...</span>
+                    </div>
+                    
+                    <div class="flex-1 space-y-2 overflow-hidden">
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> Welcome! Are you a Traveler or Helper?
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[60%] ml-auto">
+                        Traveler
+                      </div>
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> What's your flight route?
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[60%] ml-auto">
+                        DEL → JFK, Dec 25
+                      </div>
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> What help do you need?
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[60%] ml-auto">
+                        Customs help, first time
+                      </div>
+                      <div class="chat-bubble bg-green-500/20 rounded-lg p-2 text-xs border border-green-500/30">
+                        <span class="text-green-400">✓ Profile created! 3 helpers found</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 3: Match 1 - Swipe LEFT -->
+                <div class="animation-frame" data-step="3">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="flex items-center justify-between mb-2">
+                      <div class="flex items-center gap-2">
+                        <span>✈️</span>
+                        <h3 class="font-display font-bold text-sm">Matches</h3>
+                      </div>
+                      <span class="text-xs text-text-secondary">1 of 3</span>
+                    </div>
+                    
+                    <div class="glass-card p-3 flex-1 relative">
+                      <div class="absolute top-2 right-2 bg-green-500/20 px-2 py-0.5 rounded-full text-xs text-green-400">✓ Verified</div>
+                      
+                      <div class="flex flex-col items-center pt-2">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center text-3xl mb-2">
+                          👨‍🦳
+                        </div>
+                        <h4 class="font-display font-bold">Mike, 45</h4>
+                        <p class="text-xs text-cyan-400">✈️ DEL→JFK</p>
+                        <p class="text-xs text-text-secondary">📍 2.3 km away</p>
+                      </div>
+                      
+                      <div class="mt-3 space-y-1 text-xs">
+                        <div class="flex justify-between">
+                          <span class="text-text-secondary">Languages:</span>
+                          <span>English only</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span class="text-text-secondary">Helped:</span>
+                          <span>5 travelers</span>
+                        </div>
+                      </div>
+                      
+                      <div class="flex justify-center gap-6 mt-3">
+                        <button class="w-14 h-14 rounded-full bg-red-500/30 border-2 border-red-500 flex items-center justify-center text-2xl animate-pulse">
+                          ✕
+                        </button>
+                        <button class="w-14 h-14 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center text-2xl opacity-50">
+                          💚
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <p class="text-center text-xs text-red-400 mt-2">← Swipe left to skip</p>
+                  </div>
+                </div>
+                
+                <!-- STEP 4: Match 2 - Swipe RIGHT on Raj -->
+                <div class="animation-frame" data-step="4">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="flex items-center justify-between mb-2">
+                      <div class="flex items-center gap-2">
+                        <span>✈️</span>
+                        <h3 class="font-display font-bold text-sm">Matches</h3>
+                      </div>
+                      <span class="text-xs text-text-secondary">2 of 3</span>
+                    </div>
+                    
+                    <div class="glass-card p-3 flex-1 relative border border-green-500/30">
+                      <div class="absolute top-2 right-2 bg-green-500/20 px-2 py-0.5 rounded-full text-xs text-green-400">✓ Verified</div>
+                      
+                      <div class="flex flex-col items-center pt-2">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-3xl mb-2 ring-2 ring-green-500">
+                          👨
+                        </div>
+                        <h4 class="font-display font-bold">Raj, 32</h4>
+                        <p class="text-xs text-cyan-400">✈️ Same flight! DEL→JFK</p>
+                        <p class="text-xs text-text-secondary">📍 0.5 km • At gate now!</p>
+                      </div>
+                      
+                      <div class="mt-3 space-y-1 text-xs">
+                        <div class="flex justify-between">
+                          <span class="text-text-secondary">Languages:</span>
+                          <span class="text-green-400">Hindi, English ✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span class="text-text-secondary">Helped:</span>
+                          <span class="text-green-400">50+ travelers ⭐</span>
+                        </div>
+                      </div>
+                      
+                      <div class="flex justify-center gap-6 mt-3">
+                        <button class="w-14 h-14 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center text-2xl opacity-50">
+                          ✕
+                        </button>
+                        <button class="w-14 h-14 rounded-full bg-green-500/30 border-2 border-green-500 flex items-center justify-center text-2xl animate-pulse">
+                          💚
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <p class="text-center text-xs text-green-400 mt-2">Perfect match! Swipe right →</p>
+                  </div>
+                </div>
+                
+                <!-- STEP 5: E2EE Chat with Raj -->
+                <div class="animation-frame" data-step="5">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="flex items-center gap-3 pb-3 border-b border-white/10 mb-3">
+                      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-lg">
+                        👨
+                      </div>
+                      <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                          <h4 class="font-medium text-sm">Raj</h4>
+                          <span class="text-green-400 text-xs">✓</span>
+                        </div>
+                        <p class="text-xs text-green-400">🔒 E2EE Chat</p>
+                      </div>
+                      <div class="flex gap-2">
+                        <button class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm">📞</button>
+                        <button class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm">📹</button>
+                      </div>
+                    </div>
+                    
+                    <div class="flex-1 space-y-2 overflow-hidden">
+                      <div class="text-center text-xs text-text-secondary mb-2">
+                        🔐 End-to-end encrypted
+                      </div>
+                      <div class="chat-bubble bg-accent/20 rounded-lg p-2 text-xs max-w-[80%] ml-auto">
+                        Hi Raj! I'm nervous about customs 😅
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[80%]">
+                        No worries! I've helped 50+ first-timers. Meet at Gate 42?
+                      </div>
+                      <div class="chat-bubble bg-accent/20 rounded-lg p-2 text-xs max-w-[80%] ml-auto">
+                        Perfect! Thanks so much 🙏
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[80%]">
+                        See you in 20 mins! Blue jacket ✈️
+                      </div>
+                    </div>
+                    
+                    <div class="mt-3 flex gap-2">
+                      <div class="flex-1 bg-white/10 rounded-full px-4 py-2 text-xs text-text-secondary">
+                        Type a message...
+                      </div>
+                      <button class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 6: Same as Step 1 but + button HIGHLIGHTED & PULSING (user clicks here) -->
+                <div class="animation-frame" data-step="6">
+                  <div class="p-3 pb-14 h-full flex flex-col">
+                    <!-- Catchy Create Space Banner - HIGHLIGHTED & PULSING -->
+                    <div class="glass-card p-2.5 mb-2 border-2 border-primary/60 bg-gradient-to-r from-primary/20 to-accent/20 relative overflow-hidden animate-pulse">
+                      <div class="absolute top-0 right-0 w-12 h-12 opacity-30">
+                        <span class="text-3xl">🌌</span>
+                      </div>
+                      <p class="text-[10px] text-white">Can't find your Space?</p>
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <p class="text-xs font-bold gradient-text">Create Your Own! ✨</p>
+                          <p class="text-[9px] text-text-secondary italic">Space is infinite. So are possibilities.</p>
+                        </div>
+                        <!-- PULSING + BUTTON with ping indicator -->
+                        <button class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xl font-bold shadow-xl shadow-primary/50 ring-2 ring-white/60 relative">
+                          +
+                          <span class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></span>
+                          <span class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></span>
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <!-- Search Bar (dimmed) -->
+                    <div class="glass-card p-1.5 mb-2 flex items-center gap-2 opacity-40">
+                      <span class="text-text-secondary text-xs">🔍</span>
+                      <span class="text-[10px] text-text-secondary">Search spaces...</span>
+                    </div>
+                    
+                    <!-- Space List (dimmed - focus on create button) -->
+                    <div class="flex-1 space-y-1 overflow-hidden opacity-30">
+                      <div class="glass-card p-2 flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-sm">✈️</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Flight Assist</h4>
+                          <p class="text-[9px] text-text-secondary">1.2k members</p>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-sm">💼</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Deal Room</h4>
+                          <p class="text-[9px] text-text-secondary">3.8k members</p>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-sm">⚡</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Charge Share</h4>
+                          <p class="text-[9px] text-text-secondary">890 members</p>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-sm">📚</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Study Squad</h4>
+                          <p class="text-[9px] text-text-secondary">2.1k members</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Footer Tabs -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-dark-bg/90 backdrop-blur-sm border-t border-white/10 px-2 py-2">
+                      <div class="flex justify-around">
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">💬</span>
+                          <span class="text-[8px] text-text-secondary">Chats</span>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">📍</span>
+                          <span class="text-[8px] text-text-secondary">Nearby</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                          <span class="text-sm">🌌</span>
+                          <span class="text-[8px] text-primary font-medium">Spaces</span>
+                          <div class="w-1 h-1 rounded-full bg-primary mt-0.5"></div>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">📞</span>
+                          <span class="text-[8px] text-text-secondary">Calls</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 7: Create SoulMate Space -->
+                <div class="animation-frame" data-step="7">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="text-center mb-3">
+                      <h3 class="font-display font-bold text-sm">Create New Space</h3>
+                    </div>
+                    
+                    <div class="space-y-3 flex-1">
+                      <div class="glass-card p-3">
+                        <label class="text-xs text-text-secondary mb-1 block">Space Name</label>
+                        <div class="bg-white/10 rounded-lg p-2 text-sm font-medium flex items-center gap-2">
+                          <span>💍</span>
+                          <span>SoulMate</span>
+                          <span class="animate-pulse">|</span>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-3">
+                        <label class="text-xs text-text-secondary mb-1 block">Description</label>
+                        <div class="bg-white/10 rounded-lg p-2 text-xs text-text-secondary">
+                          Serious dating for marriage-minded
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-3 flex items-center gap-3">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-2xl">
+                          💍
+                        </div>
+                        <div class="flex-1">
+                          <p class="text-xs text-text-secondary">Space Image</p>
+                          <p class="text-xs text-green-400">Uploaded ✓</p>
+                        </div>
+                      </div>
+                      
+                      <button class="w-full btn-primary text-sm py-2.5 flex items-center justify-center gap-2">
+                        <span>✨</span>
+                        Create with AI
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 8: AI Builds SoulMate Schema -->
+                <div class="animation-frame" data-step="8">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="text-center mb-3">
+                      <h3 class="font-display font-bold text-sm">AI Building Schema</h3>
+                    </div>
+                    
+                    <div class="flex-1 space-y-2 overflow-hidden">
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> What should people match on?
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[70%] ml-auto">
+                        Age, Religion, Family values
+                      </div>
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> Questions to ask users?
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[70%] ml-auto">
+                        Marriage timeline, location pref
+                      </div>
+                      <div class="chat-bubble bg-green-500/20 rounded-lg p-3 text-xs border border-green-500/30 text-center">
+                        <span class="text-2xl">✨</span>
+                        <p class="text-green-400 font-medium mt-1">"SoulMate" is LIVE!</p>
+                      </div>
+                    </div>
+                    
+                    <div class="glass-card p-3 mt-3 flex items-center justify-between">
+                      <div class="flex items-center gap-2">
+                        <span>💍</span>
+                        <span class="text-sm font-medium">SoulMate</span>
+                      </div>
+                      <span class="text-xs text-green-400">Now chatting with Priya...</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 9: Space List NOW WITH SoulMate! -->
+                <div class="animation-frame" data-step="9">
+                  <div class="p-3 pb-14 h-full flex flex-col">
+                    <!-- Header with celebration -->
+                    <div class="glass-card p-2 mb-2 border border-green-500/30 bg-green-500/10 text-center">
+                      <p class="text-[10px] text-green-400 font-medium">🎉 SoulMate Space Created!</p>
+                    </div>
+                    
+                    <!-- Search Bar -->
+                    <div class="glass-card p-1.5 mb-2 flex items-center gap-2">
+                      <span class="text-text-secondary text-xs">🔍</span>
+                      <span class="text-[10px] text-text-secondary">Search spaces...</span>
+                    </div>
+                    
+                    <!-- Space List - NOW WITH SOULMATE -->
+                    <div class="flex-1 space-y-1 overflow-hidden">
+                      <!-- NEW: SoulMate Space at top with highlight -->
+                      <div class="glass-card p-2 flex items-center gap-2 border-2 border-pink-500/50 bg-pink-500/10 relative overflow-hidden">
+                        <div class="absolute -top-1 -right-1 bg-green-500 text-[8px] px-1.5 py-0.5 rounded-bl-lg text-white font-bold">NEW</div>
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-sm">💍</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px] text-pink-300">SoulMate</h4>
+                          <p class="text-[9px] text-text-secondary">Just created!</p>
+                        </div>
+                        <span class="text-[10px] text-pink-400">→</span>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2 opacity-80">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-sm">✈️</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Flight Assist</h4>
+                          <p class="text-[9px] text-text-secondary">1.2k members</p>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2 opacity-80">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-sm">💼</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Deal Room</h4>
+                          <p class="text-[9px] text-text-secondary">3.8k members</p>
+                        </div>
+                      </div>
+                      
+                      <div class="glass-card p-2 flex items-center gap-2 opacity-80">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-sm">⚡</div>
+                        <div class="flex-1">
+                          <h4 class="font-medium text-[11px]">Charge Share</h4>
+                          <p class="text-[9px] text-text-secondary">890 members</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Footer Tabs -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-dark-bg/90 backdrop-blur-sm border-t border-white/10 px-2 py-2">
+                      <div class="flex justify-around">
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">💬</span>
+                          <span class="text-[8px] text-text-secondary">Chats</span>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">📍</span>
+                          <span class="text-[8px] text-text-secondary">Nearby</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                          <span class="text-sm">🌌</span>
+                          <span class="text-[8px] text-primary font-medium">Spaces</span>
+                          <div class="w-1 h-1 rounded-full bg-primary mt-0.5"></div>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                          <span class="text-sm">📞</span>
+                          <span class="text-[8px] text-text-secondary">Calls</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 10: Two Users Joining SoulMate - AI Profile Builder -->
+                <div class="animation-frame" data-step="10">
+                  <div class="p-3 h-full flex flex-col">
+                    <div class="glass-card p-2 mb-2 flex items-center gap-2">
+                      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">💍</div>
+                      <div class="flex-1">
+                        <h4 class="font-medium text-[11px]">SoulMate</h4>
+                        <p class="text-[9px] text-green-400">2 users joining...</p>
+                      </div>
+                    </div>
+                    
+                    <!-- Two profile builders side by side -->
+                    <div class="grid grid-cols-2 gap-2 flex-1 overflow-hidden">
+                      <!-- User 1: You -->
+                      <div class="glass-card p-2 border border-primary/30 rounded-xl">
+                        <div class="flex items-center gap-1 mb-1.5">
+                          <div class="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center text-[10px]">👨</div>
+                          <span class="text-[9px] font-medium">You</span>
+                        </div>
+                        <div class="space-y-1.5 text-[8px]">
+                          <div class="bg-primary/20 rounded p-1">
+                            <span class="text-primary">🤖</span> Age range?
+                          </div>
+                          <div class="bg-white/10 rounded p-1 ml-2">
+                            25-32
+                          </div>
+                          <div class="bg-primary/20 rounded p-1">
+                            <span class="text-primary">🤖</span> Timeline?
+                          </div>
+                          <div class="bg-white/10 rounded p-1 ml-2">
+                            1-2 years
+                          </div>
+                          <div class="bg-green-500/20 rounded p-1 text-green-400 text-center">
+                            ✓ Profile ready!
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- User 2: Priya -->
+                      <div class="glass-card p-2 border border-pink-500/30 rounded-xl">
+                        <div class="flex items-center gap-1 mb-1.5">
+                          <div class="w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center text-[10px]">👩</div>
+                          <span class="text-[9px] font-medium">Priya</span>
+                        </div>
+                        <div class="space-y-1.5 text-[8px]">
+                          <div class="bg-primary/20 rounded p-1">
+                            <span class="text-primary">🤖</span> Age range?
+                          </div>
+                          <div class="bg-white/10 rounded p-1 ml-2">
+                            26-35
+                          </div>
+                          <div class="bg-primary/20 rounded p-1">
+                            <span class="text-primary">🤖</span> Timeline?
+                          </div>
+                          <div class="bg-white/10 rounded p-1 ml-2">
+                            Ready now
+                          </div>
+                          <div class="bg-green-500/20 rounded p-1 text-green-400 text-center">
+                            ✓ Profile ready!
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="mt-2 text-center">
+                      <p class="text-[9px] text-text-secondary">AI asks questions defined by Space creator</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 11: Matches in SoulMate - Swipe on Priya -->
+                <div class="animation-frame" data-step="11">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="flex items-center justify-between mb-2">
+                      <div class="flex items-center gap-2">
+                        <span>💍</span>
+                        <h3 class="font-display font-bold text-sm">SoulMate Matches</h3>
+                      </div>
+                      <span class="text-xs text-text-secondary">1 match</span>
+                    </div>
+                    
+                    <div class="glass-card p-3 flex-1 relative border border-pink-500/30 bg-pink-500/5">
+                      <div class="absolute top-2 right-2 bg-green-500/20 px-2 py-0.5 rounded-full text-xs text-green-400">✓ Verified</div>
+                      
+                      <div class="flex flex-col items-center pt-2">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-3xl mb-2 ring-2 ring-pink-400/50">
+                          👩
+                        </div>
+                        <h4 class="font-display font-bold">Priya, 28</h4>
+                        <p class="text-xs text-pink-400">💍 Marriage-minded ⭐</p>
+                        <p class="text-xs text-text-secondary">📍 3.1 km away</p>
+                      </div>
+                      
+                      <div class="mt-3 space-y-1 text-xs">
+                        <div class="flex justify-between">
+                          <span class="text-text-secondary">Timeline:</span>
+                          <span class="text-green-400">Ready now ✓</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span class="text-text-secondary">Values:</span>
+                          <span>Family-oriented</span>
+                        </div>
+                      </div>
+                      
+                      <div class="flex justify-center gap-6 mt-3">
+                        <button class="w-12 h-12 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center text-xl opacity-50">
+                          ✕
+                        </button>
+                        <button class="w-14 h-14 rounded-full bg-green-500/30 border-2 border-green-500 flex items-center justify-center text-2xl animate-pulse shadow-lg shadow-green-500/30">
+                          💚
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <p class="text-center text-xs text-green-400 mt-2">Perfect match! Swipe right → 💕</p>
+                  </div>
+                </div>
+                
+                <!-- STEP 12: OTS Message in SoulMate Chat -->
+                <div class="animation-frame" data-step="12">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="flex items-center gap-3 pb-2 border-b border-white/10 mb-2">
+                      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-lg">
+                        👩
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-medium text-sm">Priya</h4>
+                        <p class="text-xs text-green-400">🔒 E2EE</p>
+                      </div>
+                    </div>
+                    
+                    <div class="flex-1 space-y-2 overflow-hidden">
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[80%]">
+                        Great video call yesterday! 💕
+                      </div>
+                      <div class="chat-bubble bg-accent/20 rounded-lg p-2 text-xs max-w-[80%] ml-auto">
+                        Here's a personal pic from the wedding 😊
+                      </div>
+                      <!-- OTS Message -->
+                      <div class="chat-bubble bg-purple-500/30 rounded-lg p-3 text-xs max-w-[85%] ml-auto border border-purple-500/50">
+                        <div class="flex items-center gap-2 mb-2">
+                          <span>🔒</span>
+                          <span class="text-purple-300 font-medium">OTS Message</span>
+                        </div>
+                        <div class="bg-black/30 rounded-lg p-2 text-center">
+                          <span class="text-2xl">📷</span>
+                          <p class="text-xs text-purple-300 mt-1">Private photo</p>
+                          <p class="text-xs text-text-secondary">View once only</p>
+                        </div>
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[80%]">
+                        Opening OTS... 👀
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 13: OTS Viewing - Screenshot Detected! -->
+                <div class="animation-frame" data-step="13">
+                  <div class="p-4 h-full flex flex-col items-center justify-center relative">
+                    <!-- Camera Overlay Effect -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                    
+                    <!-- OTS Content with gray lines -->
+                    <div class="relative w-full glass-card p-4 ots-lines">
+                      <div class="absolute top-2 left-2 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
+                        <span class="text-xs text-red-400">Camera Active</span>
+                      </div>
+                      
+                      <div class="text-center py-6">
+                        <div class="w-20 h-20 rounded-xl bg-gradient-to-br from-pink-400/50 to-purple-500/50 mx-auto mb-3 flex items-center justify-center">
+                          <span class="text-4xl blur-sm">👩</span>
+                        </div>
+                        <p class="text-xs text-text-secondary">(Private photo viewing)</p>
+                      </div>
+                      
+                      <!-- Detection Alert! -->
+                      <div class="absolute inset-0 bg-red-500/20 backdrop-blur-sm flex items-center justify-center rounded-2xl animate-pulse">
+                        <div class="text-center">
+                          <span class="text-4xl">📱⚠️</span>
+                          <p class="text-red-400 font-bold text-sm mt-2">EXTERNAL CAMERA DETECTED!</p>
+                          <p class="text-xs text-red-300 mt-1">Another phone trying to capture</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                      <p class="text-red-400 font-medium text-sm">🚫 Screenshot attempt blocked!</p>
+                      <p class="text-xs text-text-secondary mt-1">Message deleted • Sender notified</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- STEP 14: Back to Chat - OTS Deleted -->
+                <div class="animation-frame" data-step="14">
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="flex items-center gap-3 pb-2 border-b border-white/10 mb-2">
+                      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-lg">
+                        👩
+                      </div>
+                      <div class="flex-1">
+                        <h4 class="font-medium text-sm">Priya</h4>
+                        <p class="text-xs text-green-400">🔒 E2EE</p>
+                      </div>
+                    </div>
+                    
+                    <div class="flex-1 space-y-2 overflow-hidden">
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[80%]">
+                        Great video call yesterday! 💕
+                      </div>
+                      <div class="chat-bubble bg-accent/20 rounded-lg p-2 text-xs max-w-[80%] ml-auto">
+                        Here's a personal pic from the wedding 😊
+                      </div>
+                      <!-- Deleted OTS Message -->
+                      <div class="chat-bubble bg-gray-500/20 rounded-lg p-3 text-xs max-w-[85%] ml-auto border border-gray-500/30">
+                        <div class="flex items-center gap-2 text-gray-400">
+                          <span>💨</span>
+                          <span>OTS message deleted</span>
+                        </div>
+                        <p class="text-xs text-red-400 mt-1">⚠️ Screenshot attempt detected</p>
+                      </div>
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[80%]">
+                        Oops! Someone tried to capture. Message gone! 🔐
+                      </div>
+                      <div class="chat-bubble bg-accent/20 rounded-lg p-2 text-xs max-w-[80%] ml-auto">
+                        That's why I love OTS! Our privacy protected 💕
+                      </div>
+                    </div>
+                    
+                    <div class="mt-2 text-center">
+                      <p class="text-xs text-green-400">🔐 Private moments stay private!</p>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <!-- Navigation Controls -->
+              <div class="absolute bottom-2 left-0 right-0 z-20 px-2">
+                <!-- Progress Dots (14 steps, clickable) -->
+                <div class="flex justify-center gap-0.5 mb-2">
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-primary transition-all cursor-pointer hover:scale-125" data-index="0"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="1"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="2"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="3"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="4"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="5"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="6"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="7"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="8"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="9"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="10"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="11"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="12"></div>
+                  <div class="progress-dot w-1.5 h-1.5 rounded-full bg-white/30 transition-all cursor-pointer hover:scale-125" data-index="13"></div>
+                </div>
+                
+                <!-- Prev/Next Arrows -->
+                <div class="flex justify-between items-center">
+                  <button id="prev-btn" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-sm transition-all hover:scale-110 active:scale-95">
+                    ‹
+                  </button>
+                  <span class="text-xs text-text-secondary" id="step-counter">1 / 14</span>
+                  <button id="next-btn" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-sm transition-all hover:scale-110 active:scale-95">
+                    ›
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Step Label -->
+              <div class="absolute top-10 left-1/2 -translate-x-1/2 z-20">
+                <div id="step-label" class="bg-primary/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium">
+                  Browse Spaces
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- HERO Comparison Strip - Center of Attraction -->
+  <section class="py-6 md:py-8 border-y border-primary/20 bg-gradient-to-r from-dark-bg via-primary/10 to-dark-bg relative overflow-hidden">
+    <!-- Glow effects -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/4 w-64 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-64 h-32 bg-accent/20 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Section title -->
+      <p class="text-center text-xs md:text-sm text-text-secondary mb-3 uppercase tracking-wider">Why FRNDSAPP is Different</p>
+      
+      <!-- Main comparison grid - With detailed explanations -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 text-center mb-4">
+        <div class="comparison-card group glass-card p-3 md:p-4 rounded-2xl border-2 border-primary/20 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20">
+          <p class="text-text-secondary text-[9px] md:text-[10px] line-through mb-1 opacity-60">Their rules, their way</p>
+          <p class="text-white font-bold text-xs md:text-base">✨ You Create Rules</p>
+          <p class="text-primary text-[9px] md:text-xs mt-1 leading-tight">Define your own matching criteria. Unlike other apps where you're stuck with their algorithm.</p>
+        </div>
+        <div class="comparison-card group glass-card p-3 md:p-4 rounded-2xl border-2 border-accent/20 hover:border-accent/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20">
+          <p class="text-text-secondary text-[9px] md:text-[10px] line-through mb-1 opacity-60">Fake profiles everywhere</p>
+          <p class="text-white font-bold text-xs md:text-base">✅ 3D Face Verified</p>
+          <p class="text-accent text-[9px] md:text-xs mt-1 leading-tight">Real-time liveness check. No masks, no photos of photos. 100% real humans.</p>
+        </div>
+        <div class="comparison-card group glass-card p-3 md:p-4 rounded-2xl border-2 border-secondary/20 hover:border-secondary/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/20">
+          <p class="text-text-secondary text-[9px] md:text-[10px] line-through mb-1 opacity-60">They can read your chats</p>
+          <p class="text-white font-bold text-xs md:text-base">🔐 Even We Can't Read</p>
+          <p class="text-secondary text-[9px] md:text-xs mt-1 leading-tight">True E2EE encryption. Not even FRNDSAPP servers can decrypt your messages.</p>
+        </div>
+        <div class="comparison-card group glass-card p-3 md:p-4 rounded-2xl border-2 border-red-500/20 hover:border-red-500/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/20">
+          <p class="text-text-secondary text-[9px] md:text-[10px] line-through mb-1 opacity-60">Basic "view once" message</p>
+          <p class="text-white font-bold text-xs md:text-base">👁️ One-Time Secure</p>
+          <p class="text-red-400 text-[9px] md:text-xs mt-1 leading-tight">World's first! Blocks other cameras from capturing. Get notified if anyone tries. Beyond basic view-once.</p>
+        </div>
+      </div>
+      
+      <!-- Additional trust badges row -->
+      <div class="flex flex-wrap justify-center gap-3 md:gap-6 text-[10px] md:text-xs">
+        <span class="flex items-center gap-1 text-white/80 hover:text-white transition-colors">🔒 E2EE Everything</span>
+        <span class="flex items-center gap-1 text-white/80 hover:text-white transition-colors">📍 Location Matching</span>
+        <span class="flex items-center gap-1 text-white/80 hover:text-white transition-colors">💻 Open Source</span>
+        <span class="flex items-center gap-1 text-white/80 hover:text-white transition-colors">📱 Hashed Contacts</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section id="features" class="py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-heading mb-4">
+          <span class="gradient-text">Features That Matter</span>
+        </h2>
+        <p class="section-subheading">Built for privacy, designed for real connections.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1: Create Spaces -->
+        <div class="feature-card glass-card p-6 md:p-8 lg:col-span-2">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-2xl flex-shrink-0">
+              ✨
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xl mb-2">Imagine Any Matching Space. Build It.</h3>
+              <p class="text-text-secondary mb-4">
+                Nothing like this exists anywhere in the world! Not just dating — ANY use case you can imagine. Want to match travelers with helpers? Create it. Business deals? Create it. Study partners? Create it. YOU define the rules, the questions, the matching criteria. Our AI Space Builder turns your idea into a working Space in minutes — no coding, no approval needed. It's like having your own app without building one.
+              </p>
+              <p class="text-accent text-sm">Flight buddies, EV charger sharing, band members, roommates, mentors — infinite possibilities. You're the creator. 🚀</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature 2: 3D Face Verification -->
+        <div class="feature-card glass-card p-6 md:p-8">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-2xl mb-4">
+            🛡️
+          </div>
+          <h3 class="font-display font-bold text-xl mb-2">Real Humans Only</h3>
+          <p class="text-text-secondary">
+            No user can register without passing 3D liveness detection. Real depth, movement, anti-spoofing. Every profile pic verified against your real face.
+          </p>
+        </div>
+        
+        <!-- Feature 3: E2EE -->
+        <div class="feature-card glass-card p-6 md:p-8">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-2xl mb-4">
+            🔐
+          </div>
+          <h3 class="font-display font-bold text-xl mb-2">We Can't See Anything</h3>
+          <p class="text-text-secondary mb-3">
+            End-to-end encryption using Signal Protocol. Messages, photos, videos, files, location, calls — ALL encrypted.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['Text', 'Photos', 'Videos', 'Calls', 'Files'].map((item) => (
+              <span class="px-2 py-1 bg-white/5 rounded text-xs text-accent">✓ {item}</span>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Feature 4: OTS -->
+        <div class="feature-card glass-card p-6 md:p-8 border-accent/30">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl mb-4">
+            👁️
+          </div>
+          <h3 class="font-display font-bold text-xl mb-2">OTS: Beyond Encryption</h3>
+          <p class="text-text-secondary mb-3">
+            World's first anti-capture technology! Camera activates instantly when viewing. Blocks content if you look away or move. Detects anyone else in frame. Uses gray line patterns to blur sneaky screenshot attempts. Even blocks OTHER phones trying to capture your screen! If someone tries anyway, you get notified immediately. Message auto-deletes after viewing.
+          </p>
+          <p class="text-sm text-accent">No one can snap your private moments. Not even with another phone. 🔐</p>
+        </div>
+        
+        <!-- Feature 5: One-Swipe -->
+        <div class="feature-card glass-card p-6 md:p-8">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-2xl mb-4">
+            💬
+          </div>
+          <h3 class="font-display font-bold text-xl mb-2">Swipe Right. Start Talking.</h3>
+          <p class="text-text-secondary">
+            No mutual matching needed! Swipe right, chat opens immediately. They see you in "New Matches" — reply or block. Simple. Natural.
+          </p>
+        </div>
+        
+        <!-- Feature 6: Nearby -->
+        <div class="feature-card glass-card p-6 md:p-8">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center text-2xl mb-4">
+            📍
+          </div>
+          <h3 class="font-display font-bold text-xl mb-2">Find People Near You</h3>
+          <p class="text-text-secondary">
+            Location-based matching in every Space. See "3.2 km away" on cards. Your exact location is NEVER shared — only distance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-20 md:py-32 bg-dark-surface/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-heading mb-4">
+          <span class="gradient-text">How It Works</span>
+        </h2>
+        <p class="section-subheading">From verification to conversation in minutes.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            step: '01',
+            icon: '🛡️',
+            title: 'Prove You\'re Real',
+            desc: 'One-time 3D face liveness scan. Anti-spoofing checks. Takes 30 seconds, verified forever.',
+          },
+          {
+            step: '02',
+            icon: '✨',
+            title: 'Browse or Create Spaces',
+            desc: 'Browse existing Spaces or create your own! Chat with AI to define matching rules.',
+          },
+          {
+            step: '03',
+            icon: '📝',
+            title: 'Join & Build Profile',
+            desc: 'AI asks questions based on Space schema. Your profile is created for THAT Space.',
+          },
+          {
+            step: '04',
+            icon: '🎯',
+            title: 'See Your Matches',
+            desc: 'AI finds people who match. Swipeable cards with photo, name, distance, match details.',
+          },
+          {
+            step: '05',
+            icon: '💬',
+            title: 'Swipe Right = Message!',
+            desc: 'Swipe right, chat opens IMMEDIATELY. No waiting for mutual match. Send your message.',
+          },
+          {
+            step: '06',
+            icon: '🤝',
+            title: 'They Reply or Block',
+            desc: 'They see you in "New Matches". Reply = Frnds. Block = You disappear (no awkwardness!).',
+          },
+        ].map((item) => (
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-display font-bold text-primary">
+              {item.step}
+            </div>
+            <div class="glass-card p-6 pt-10">
+              <span class="text-3xl mb-4 block">{item.icon}</span>
+              <h3 class="font-display font-bold text-lg mb-2">{item.title}</h3>
+              <p class="text-text-secondary text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Comparison Box -->
+      <div class="mt-16 glass-card p-6 md:p-8 max-w-5xl mx-auto">
+        <h3 class="font-display font-bold text-xl mb-6 text-center">Why FRNDSAPP is Different from Everything</h3>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <!-- vs Dating Apps -->
+          <div class="space-y-3 p-4 rounded-xl bg-red-500/5 border border-red-500/20">
+            <h4 class="text-red-400 font-medium">❌ Tinder / Bumble</h4>
+            <ul class="text-text-secondary text-sm space-y-1">
+              <li>• Their rules, their algorithm</li>
+              <li>• Not E2EE — they can read your chats</li>
+              <li>• Closed source — can't verify claims</li>
+              <li>• Wait for mutual match to chat</li>
+            </ul>
+          </div>
+          <!-- vs Messaging Apps -->
+          <div class="space-y-3 p-4 rounded-xl bg-red-500/5 border border-red-500/20">
+            <h4 class="text-red-400 font-medium">❌ WhatsApp / Telegram</h4>
+            <ul class="text-text-secondary text-sm space-y-1">
+              <li>• No face verification — fake profiles</li>
+              <li>• No smart matching system</li>
+              <li>• Basic view-once (can still screenshot)</li>
+              <li>• Closed source — trust blindly</li>
+            </ul>
+          </div>
+          <!-- vs Community Apps -->
+          <div class="space-y-3 p-4 rounded-xl bg-red-500/5 border border-red-500/20">
+            <h4 class="text-red-400 font-medium">❌ Discord / Facebook Groups</h4>
+            <ul class="text-text-secondary text-sm space-y-1">
+              <li>• Can't create custom matching rules</li>
+              <li>• No AI-powered profile building</li>
+              <li>• Admins can read everything</li>
+              <li>• Closed source — no transparency</li>
+            </ul>
+          </div>
+          <!-- FRNDSAPP -->
+          <div class="space-y-3 p-4 rounded-xl bg-green-500/10 border border-green-500/30">
+            <h4 class="text-green-400 font-medium">✅ FRNDSAPP — All in One</h4>
+            <ul class="text-text-secondary text-sm space-y-1">
+              <li>• Create YOUR own matching rules</li>
+              <li>• 3D live face verified — no fakes</li>
+              <li>• True E2EE + OTS anti-capture</li>
+              <li>• AI matches you intelligently</li>
+              <li>• 💻 Open source — verify yourself!</li>
+              <li>• Swipe right → Chat opens instantly!</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center text-accent text-sm">The world's first open source app where YOU create the rules and connect securely. 🚀</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Use Cases -->
+  <section id="use-cases" class="py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-heading mb-4">
+          <span class="gradient-text">What Will YOU Create?</span>
+        </h2>
+        <p class="section-subheading">Here are some Spaces our users have built. Your imagination is the only limit.</p>
+      </div>
+      
+      <!-- Featured Spaces -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="feature-card glass-card p-6 border-l-4 border-primary">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💼</span>
+            <h3 class="font-display font-bold text-lg">Deal Room</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4">
+            Exclusive B2B deals & partnerships. Sellers share confidential term sheets via OTS — view once, can't screenshot or forward!
+          </p>
+          <p class="text-accent text-xs">🔐 Your exclusive pricing stays exclusive</p>
+        </div>
+        
+        <div class="feature-card glass-card p-6 border-l-4 border-pink-500">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">💍</span>
+            <h3 class="font-display font-bold text-lg">SoulMate</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4">
+            Serious dating for marriage. 3D face verified — NO catfishing! Find matches near you. E2EE video calls. OTS for private moments.
+          </p>
+          <p class="text-accent text-xs">💕 Real people. 4.2 km away!</p>
+        </div>
+        
+        <div class="feature-card glass-card p-6 border-l-4 border-cyan-500">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">✈️</span>
+            <h3 class="font-display font-bold text-lg">Flight Assist</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4">
+            Connect travelers with airport helpers. Match by destination, flight time. Find helpers on YOUR flight, at YOUR airport!
+          </p>
+          <p class="text-accent text-xs">🛫 0.5 km away — meet at the gate!</p>
+        </div>
+      </div>
+      
+      <!-- More Ideas -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { icon: '⚡', name: 'Charge Share', desc: 'Share your EV charger' },
+          { icon: '📚', name: 'Study Squad', desc: 'Find study partners' },
+          { icon: '🎯', name: 'Career Mentor', desc: 'Find mentors' },
+          { icon: '🎸', name: 'Band Finder', desc: 'Musicians connect' },
+          { icon: '🐕', name: 'Pet Sitter', desc: 'Trusted sitters' },
+          { icon: '🏠', name: 'Roommate', desc: 'Compatible matches' },
+        ].map((space) => (
+          <div class="glass-card p-4 text-center hover:scale-105 transition-transform cursor-pointer">
+            <span class="text-2xl mb-2 block">{space.icon}</span>
+            <h4 class="font-medium text-sm mb-1">{space.name}</h4>
+            <p class="text-text-secondary text-xs">{space.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Security Deep Dive -->
+  <section id="security" class="py-20 md:py-32 bg-dark-surface/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-heading mb-4">
+          <span class="gradient-text">Security Beyond Anything</span>
+        </h2>
+        <p class="section-subheading">We built FRNDSAPP for people who take privacy seriously.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- E2EE -->
+        <div class="glass-card p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-2xl">🔐</div>
+            <h3 class="font-display font-bold text-lg">True End-to-End Encryption</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4">
+            Signal Protocol encryption. Your messages are encrypted on YOUR device and only decrypted on the recipient's. We literally CANNOT read your messages.
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            {['Text messages', 'Photos & videos', 'Files & docs', 'Location', 'Audio calls', 'Video calls'].map((item) => (
+              <span class="text-green-400">✓ {item}</span>
+            ))}
+          </div>
+        </div>
+        
+        <!-- 3D Liveness -->
+        <div class="glass-card p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center text-2xl">🛡️</div>
+            <h3 class="font-display font-bold text-lg">3D Face Liveness</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4">
+            You can't create an account without passing real-time 3D liveness detection. Depth, movement, blink detection, anti-spoofing.
+          </p>
+          <p class="text-accent text-sm">No photos of photos. No masks. No screens. Real humans only.</p>
+        </div>
+        
+        <!-- OTS Deep Dive -->
+        <div class="glass-card p-6 md:p-8 md:col-span-2 border border-purple-500/30">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-2xl">👁️</div>
+            <h3 class="font-display font-bold text-lg">OTS Messages — The Ultimate Protection</h3>
+          </div>
+          <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: '📷', text: 'Camera activates instantly when reading' },
+              { icon: '👤', text: 'Must be YOUR verified face' },
+              { icon: '🚫', text: 'Blocks if you look away or move' },
+              { icon: '⚠️', text: 'Deletes if anyone else appears' },
+              { icon: '📱', text: 'Works only on primary device' },
+              { icon: '📸', text: 'Gray patterns blur screenshots' },
+              { icon: '🔔', text: 'Screenshot attempt notifies sender' },
+              { icon: '💨', text: 'Auto-deletes after viewing' },
+            ].map((item) => (
+              <div class="flex items-start gap-2 text-sm">
+                <span>{item.icon}</span>
+                <span class="text-text-secondary">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Contact Hash -->
+        <div class="glass-card p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center text-2xl">📱</div>
+            <h3 class="font-display font-bold text-lg">Contact Sync — Hash Only</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4">
+            Contacts are HASHED on your device. Only hashes sent to us. We compare and return matches. We NEVER see actual names or numbers.
+          </p>
+          <p class="text-accent text-sm">No contact mining. We literally can't.</p>
+        </div>
+        
+        <!-- Open Source -->
+        <div class="glass-card p-6 md:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center text-2xl">💻</div>
+            <h3 class="font-display font-bold text-lg">Open Source — Verify Us</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4">
+            Our frontend code is fully open source. Don't trust us — VERIFY us. Security researchers can audit our encryption implementation.
+          </p>
+          <a href="https://github.com/frndsapp" target="_blank" class="inline-flex items-center gap-2 text-accent hover:text-white transition-colors text-sm">
+            View on GitHub
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Download CTA -->
+  <section id="download" class="py-20 md:py-32 relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/20 via-secondary/10 to-transparent rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="section-heading mb-6">
+        Ready to <span class="gradient-text">Find Your People</span>?
+      </h2>
+      <p class="section-subheading mb-10">
+        Join thousands of verified users who are done with fake profiles and endless swiping with no replies.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a href="#" class="btn-primary flex items-center justify-center gap-3 text-lg px-8 py-4">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          Download on App Store
+        </a>
+        <a href="#" class="btn-secondary flex items-center justify-center gap-3 text-lg px-8 py-4">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
+          </svg>
+          Get it on Google Play
+        </a>
+      </div>
+      
+      <p class="text-text-secondary text-sm mb-6">Free to download. Join unlimited Spaces. Premium features available.</p>
+      
+      <a href="#create-space" class="text-accent hover:text-white transition-colors inline-flex items-center gap-2">
+        Can't find your Space? Create with your own rules!
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      
+      <!-- Trust Reminder -->
+      <div class="mt-12 flex flex-wrap justify-center gap-4 text-xs text-text-secondary">
+        <span>🔒 3D face verified</span>
+        <span>•</span>
+        <span>🔐 E2EE messages, calls, files</span>
+        <span>•</span>
+        <span>👁️ OTS ultra-secure</span>
+        <span>•</span>
+        <span>💻 Open source</span>
+        <span>•</span>
+        <span>📱 Hashed contacts</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Developers Section -->
+  <section class="py-16 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="font-display font-bold text-2xl mb-4">Built for Developers. Verified by Community.</h3>
+      <p class="text-text-secondary mb-8">
+        We believe in transparency. Our frontend code is fully open source. Audit our encryption. Find bugs. Contribute.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://github.com/frndsapp" target="_blank" class="btn-secondary flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+          View on GitHub
+        </a>
+        <a href="#" class="btn-secondary flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          Documentation
+        </a>
+        <a href="mailto:security@frndsapp.com" class="btn-secondary flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          Report a Bug
+        </a>
+      </div>
+      <p class="text-text-secondary text-sm mt-6 italic">"We have nothing to hide because we literally can't see your data anyway."</p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // ============================================================
+  // SIMPLE E2EE MESSAGE ANIMATION
+  // ============================================================
+  // Click bubble → flames activate → message flies between astronauts
+  // Simple, clean, no position swapping
+  
+  let isAnimating = false;
+  let messageDirection = true; // true = left to right, false = right to left
+  
+  function sendEncryptedMessage() {
+    if (isAnimating) return;
+    isAnimating = true;
+    
+    const sittingAstro = document.getElementById('astronaut-sitting');
+    const hangingAstro = document.getElementById('astronaut-hanging');
+    const flyingMessage = document.getElementById('flying-message');
+    const securityLock = document.getElementById('security-lock');
+    
+    if (!sittingAstro || !hangingAstro || !flyingMessage) {
+      isAnimating = false;
+      return;
+    }
+    
+    // Get flames
+    const rocketFlames = sittingAstro.querySelector('.rocket-flames');
+    const jetpackFlames = hangingAstro.querySelector('.jetpack-flames');
+    
+    // Clean up
+    flyingMessage.classList.remove('flying-right', 'flying-left');
+    sittingAstro.classList.remove('sending', 'receiving');
+    hangingAstro.classList.remove('sending', 'receiving');
+    if (securityLock) securityLock.classList.remove('unlocked');
+    
+    // Activate flames
+    if (messageDirection) {
+      if (rocketFlames) rocketFlames.classList.add('active');
+      sittingAstro.classList.add('sending');
+    } else {
+      if (jetpackFlames) jetpackFlames.classList.add('active');
+      hangingAstro.classList.add('sending');
+    }
+    
+    // Send message
+    flyingMessage.classList.add(messageDirection ? 'flying-right' : 'flying-left');
+    
+    // Lock opens when message passes through center (750ms)
+    setTimeout(() => {
+      if (securityLock) securityLock.classList.add('unlocked');
+      
+      // Receiver reacts
+      if (messageDirection) {
+        if (jetpackFlames) jetpackFlames.classList.add('active');
+        hangingAstro.classList.add('receiving');
+      } else {
+        if (rocketFlames) rocketFlames.classList.add('active');
+        sittingAstro.classList.add('receiving');
+      }
+    }, 750);
+    
+    // Lock closes, clean up (1500ms)
+    setTimeout(() => {
+      if (securityLock) securityLock.classList.remove('unlocked');
+      flyingMessage.classList.remove('flying-right', 'flying-left');
+      
+      if (rocketFlames) rocketFlames.classList.remove('active');
+      if (jetpackFlames) jetpackFlames.classList.remove('active');
+      
+      sittingAstro.classList.remove('sending', 'receiving');
+      hangingAstro.classList.remove('sending', 'receiving');
+      
+      // Alternate direction for next click
+      messageDirection = !messageDirection;
+      isAnimating = false;
+    }, 1800);
+  }
+  
+  // Make function globally available
+  (window as any).sendEncryptedMessage = sendEncryptedMessage;
+  
+  // Step labels for the 11-step animation flow
+  const stepLabels = [
+    'Browse Spaces',       // 1. Spaces list with + button (no SoulMate)
+    'Join Flight Assist',  // 2. AI asks questions
+    'Match 1: Skip',       // 3. First match - swipe LEFT
+    'Match 2: Perfect!',   // 4. Raj - swipe RIGHT
+    'E2EE Chat',           // 5. Chat with Raj
+    'Create New Space',    // 6. Same spaces list, + button highlighted
+    'Building SoulMate',   // 7. Create form
+    'AI Schema',           // 8. AI builds schema
+    '🎉 SoulMate Live!',   // 9. Space list with SoulMate now included
+    'Users Join Space',    // 10. Two users filling profiles with AI
+    'Match in SoulMate',   // 11. Matched with Priya, swipe right
+    'OTS Message',         // 12. Send private pic in chat
+    '⚠️ Snap Detected!',   // 13. Screenshot attempt blocked
+    'Privacy Protected'    // 14. Back to chat, OTS deleted
+  ];
+  
+  // Phone animation
+  const frames = document.querySelectorAll('.animation-frame');
+  const dots = document.querySelectorAll('.progress-dot');
+  const stepLabel = document.getElementById('step-label');
+  const stepCounter = document.getElementById('step-counter');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  let currentFrame = 0;
+  let autoPlayInterval: ReturnType<typeof setInterval> | null = null;
+  let pauseTimeout: ReturnType<typeof setTimeout> | null = null;
+  
+  function showFrame(index: number) {
+    currentFrame = index;
+    
+    frames.forEach((frame, i) => {
+      frame.classList.toggle('active', i === index);
+      (frame as HTMLElement).style.display = i === index ? 'block' : 'none';
+    });
+    
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-primary', i === index);
+      dot.classList.toggle('bg-white/30', i !== index);
+    });
+    
+    // Update step counter
+    if (stepCounter) {
+      stepCounter.textContent = `${index + 1} / ${frames.length}`;
+    }
+    
+    // Update step label with color change for warning steps
+    if (stepLabel) {
+      stepLabel.textContent = stepLabels[index] || '';
+      stepLabel.style.animation = 'none';
+      stepLabel.offsetHeight; // Trigger reflow
+      stepLabel.style.animation = 'labelPop 0.3s ease';
+      
+      // Red background for detection step (step 13, index 12)
+      if (index === 12) {
+        stepLabel.classList.add('bg-red-500/80');
+        stepLabel.classList.remove('bg-primary/80');
+      } else {
+        stepLabel.classList.remove('bg-red-500/80');
+        stepLabel.classList.add('bg-primary/80');
+      }
+    }
+  }
+  
+  function goToNext() {
+    const nextIndex = (currentFrame + 1) % frames.length;
+    showFrame(nextIndex);
+  }
+  
+  function goToPrev() {
+    const prevIndex = (currentFrame - 1 + frames.length) % frames.length;
+    showFrame(prevIndex);
+  }
+  
+  function pauseAutoPlay() {
+    // Stop current auto-play
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
+    // Clear any existing resume timeout
+    if (pauseTimeout) {
+      clearTimeout(pauseTimeout);
+    }
+    // Resume after 8 seconds of no interaction
+    pauseTimeout = setTimeout(() => {
+      startAutoPlay();
+    }, 8000);
+  }
+  
+  function startAutoPlay() {
+    if (autoPlayInterval) return;
+    autoPlayInterval = setInterval(() => {
+      goToNext();
+    }, 3000);
+  }
+  
+  // Click handlers for dots
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.getAttribute('data-index') || '0');
+      showFrame(index);
+      pauseAutoPlay();
+    });
+  });
+  
+  // Prev/Next button handlers
+  prevBtn?.addEventListener('click', () => {
+    goToPrev();
+    pauseAutoPlay();
+  });
+  
+  nextBtn?.addEventListener('click', () => {
+    goToNext();
+    pauseAutoPlay();
+  });
+  
+  // Initialize
+  showFrame(0);
+  
+  // Start auto-play
+  startAutoPlay();
+  
+  // Scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.feature-card, .glass-card').forEach(el => {
+    el.classList.add('fade-up');
+    observer.observe(el);
+  });
+</script>
+
+<style>
+  .animation-frame {
+    display: none;
+    height: 100%;
+  }
+  
+  .animation-frame.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes labelPop {
+    0% { transform: translateX(-50%) scale(0.8); opacity: 0; }
+    100% { transform: translateX(-50%) scale(1); opacity: 1; }
+  }
+  
+  .typing-cursor {
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  
+  /* Big Interactive Bubble */
+  .big-bubble {
+    transition: all 0.3s ease;
+  }
+  
+  #space-bubble:hover .big-bubble {
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.2), inset 0 0 60px rgba(139, 92, 246, 0.1);
+  }
+  
+  #space-bubble:active .big-bubble {
+    transform: scale(0.98);
+  }
+  
+  /* Bubble shimmer */
+  .bubble-shimmer {
+    transition: transform 1s ease;
+  }
+  
+  /* Astronaut Scene Animations */
+  .animate-float-slow {
+    animation: floatSlow 4s ease-in-out infinite;
+  }
+  
+  .animate-float-slow-reverse {
+    animation: floatSlowReverse 4s ease-in-out infinite;
+  }
+  
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
+  }
+  
+  @keyframes floatSlowReverse {
+    0%, 100% { transform: translateY(-12px) rotate(3deg); }
+    50% { transform: translateY(0) rotate(-3deg); }
+  }
+  
+  /* Flying message animation */
+  @keyframes flyMessage {
+    0% {
+      left: 10%;
+      top: 20%;
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    30% {
+      top: 10%;
+      transform: scale(1.2) rotate(-10deg);
+    }
+    70% {
+      top: 10%;
+      transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+      left: 85%;
+      top: 20%;
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  @keyframes flyMessageReverse {
+    0% {
+      left: 85%;
+      top: 20%;
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    30% {
+      top: 10%;
+      transform: scale(1.2) rotate(10deg);
+    }
+    70% {
+      top: 10%;
+      transform: scale(1.2) rotate(-10deg);
+    }
+    100% {
+      left: 10%;
+      top: 20%;
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  .fly-left-to-right {
+    animation: flyMessage 1s ease-in-out forwards;
+  }
+  
+  .fly-right-to-left {
+    animation: flyMessageReverse 1s ease-in-out forwards;
+  }
+  
+  /* Astronaut wave animation */
+  @keyframes astronautWave {
+    0%, 100% { transform: translateY(0) rotate(-3deg) scale(1); }
+    25% { transform: translateY(-5px) rotate(-8deg) scale(1.1); }
+    50% { transform: translateY(0) rotate(0deg) scale(1); }
+    75% { transform: translateY(-5px) rotate(5deg) scale(1.1); }
+  }
+  
+  .astronaut-sending {
+    animation: astronautWave 0.5s ease-in-out;
+  }
+  
+  .astronaut-receiving {
+    animation: astronautWave 0.3s ease-in-out 0.8s;
+  }
+  
+  /* Star positions and animations */
+  .star-1 { top: 8%; left: 15%; animation: twinkle 2s ease-in-out infinite; }
+  .star-2 { top: 20%; left: 8%; animation: twinkle 2.5s ease-in-out infinite 0.5s; }
+  .star-3 { top: 75%; left: 12%; animation: twinkle 3s ease-in-out infinite 1s; }
+  .star-4 { top: 12%; right: 15%; animation: twinkle 2s ease-in-out infinite 0.3s; }
+  .star-5 { top: 65%; right: 10%; animation: twinkle 2.5s ease-in-out infinite 0.7s; }
+  .star-6 { top: 85%; right: 20%; animation: twinkle 2.8s ease-in-out infinite 0.2s; }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.8); }
+  }
+  
+  /* Floating rockets */
+  .rocket-1 { top: 5%; left: 25%; animation: floatRocket 8s ease-in-out infinite; }
+  .rocket-2 { top: 80%; right: 18%; animation: floatRocket 10s ease-in-out infinite 2s; }
+  .rocket-3 { top: 45%; left: 5%; animation: floatRocket 7s ease-in-out infinite 1s; }
+  
+  @keyframes floatRocket {
+    0%, 100% { 
+      transform: translateY(0) rotate(-15deg); 
+      opacity: 0.4;
+    }
+    25% { 
+      transform: translateY(-10px) rotate(-5deg); 
+      opacity: 0.7;
+    }
+    50% { 
+      transform: translateY(-5px) rotate(5deg); 
+      opacity: 0.5;
+    }
+    75% { 
+      transform: translateY(-15px) rotate(-10deg); 
+      opacity: 0.8;
+    }
+  }
+  
+  /* Slow orbit ring */
+  .animate-spin-slow {
+    animation: spin 30s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  /* Flying rocket animation - diagonal path between astronauts */
+  @keyframes flyRocket {
+    0% {
+      left: 0%;
+      top: 28%;
+      opacity: 1;
+      transform: rotate(35deg) scale(1);
+    }
+    25% {
+      transform: rotate(20deg) scale(1.3);
+    }
+    50% {
+      left: 50%;
+      top: 35%;
+      transform: rotate(5deg) scale(1.4);
+    }
+    75% {
+      transform: rotate(-15deg) scale(1.3);
+    }
+    100% {
+      left: 95%;
+      top: 45%;
+      opacity: 1;
+      transform: rotate(-35deg) scale(1);
+    }
+  }
+  
+  @keyframes flyRocketReverse {
+    0% {
+      left: 95%;
+      top: 45%;
+      opacity: 1;
+      transform: rotate(-145deg) scale(1);
+    }
+    25% {
+      transform: rotate(-160deg) scale(1.3);
+    }
+    50% {
+      left: 50%;
+      top: 35%;
+      transform: rotate(-175deg) scale(1.4);
+    }
+    75% {
+      transform: rotate(-195deg) scale(1.3);
+    }
+    100% {
+      left: 0%;
+      top: 28%;
+      opacity: 1;
+      transform: rotate(-215deg) scale(1);
+    }
+  }
+  
+  .fly-left-to-right {
+    animation: flyRocket 1.2s ease-in-out forwards;
+  }
+  
+  .fly-right-to-left {
+    animation: flyRocketReverse 1.2s ease-in-out forwards;
+  }
+  
+  /* Rocket trail effect */
+  .rocket-fly {
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.8));
+  }
+  
+  /* Ripple effect on click */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  .ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4), rgba(139, 92, 246, 0.2), transparent);
+    animation: ripple 1s ease-out forwards;
+    pointer-events: none;
+  }
+  
+  /* Two floating bubbles animations */
+  @keyframes floatBubble1 {
+    0%, 100% { 
+      transform: translateY(0) translateX(0); 
+    }
+    25% { 
+      transform: translateY(-15px) translateX(5px); 
+    }
+    50% { 
+      transform: translateY(-8px) translateX(-5px); 
+    }
+    75% { 
+      transform: translateY(-20px) translateX(3px); 
+    }
+  }
+  
+  @keyframes floatBubble2 {
+    0%, 100% { 
+      transform: translateY(0) translateX(0); 
+    }
+    25% { 
+      transform: translateY(-10px) translateX(-8px); 
+    }
+    50% { 
+      transform: translateY(-18px) translateX(5px); 
+    }
+    75% { 
+      transform: translateY(-5px) translateX(-3px); 
+    }
+  }
+  
+  .animate-float-bubble-1 {
+    animation: floatBubble1 8s ease-in-out infinite;
+  }
+  
+  .animate-float-bubble-2 {
+    animation: floatBubble2 6s ease-in-out infinite 1s;
+  }
+  
+  /* Bubble base shadow */
+  .bubble-1 {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15), inset 0 0 30px rgba(139, 92, 246, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .bubble-2 {
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.15), inset 0 0 25px rgba(99, 102, 241, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  /* FULL AREA HOVER - hovering anywhere in #space-bubble triggers intense glow on BOTH bubbles */
+  #space-bubble:hover .bubble-1 {
+    border-color: rgba(99, 102, 241, 0.7) !important;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.35), rgba(6, 182, 212, 0.25)) !important;
+    box-shadow: 
+      0 0 30px rgba(99, 102, 241, 0.5),
+      0 0 60px rgba(99, 102, 241, 0.4),
+      0 0 100px rgba(139, 92, 246, 0.35),
+      0 0 150px rgba(99, 102, 241, 0.25),
+      0 0 200px rgba(139, 92, 246, 0.15),
+      inset 0 0 80px rgba(139, 92, 246, 0.2) !important;
+    transform: scale(1.08);
+    animation: bubblePulseGlow 1.5s ease-in-out infinite;
+  }
+  
+  #space-bubble:hover .bubble-2 {
+    border-color: rgba(6, 182, 212, 0.7) !important;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.25)) !important;
+    box-shadow: 
+      0 0 30px rgba(6, 182, 212, 0.5),
+      0 0 60px rgba(6, 182, 212, 0.4),
+      0 0 100px rgba(99, 102, 241, 0.35),
+      0 0 150px rgba(6, 182, 212, 0.25),
+      0 0 200px rgba(99, 102, 241, 0.15),
+      inset 0 0 70px rgba(99, 102, 241, 0.2) !important;
+    transform: scale(1.08);
+    animation: bubblePulseGlow 1.5s ease-in-out infinite 0.3s;
+  }
+  
+  /* Inner ring glow on container hover */
+  #space-bubble:hover .bubble-1 > div:last-child,
+  #space-bubble:hover .bubble-2 > div:last-child {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Pulsing glow animation */
+  @keyframes bubblePulseGlow {
+    0%, 100% { 
+      filter: brightness(1);
+    }
+    50% { 
+      filter: brightness(1.2);
+    }
+  }
+  
+  /* Fusion dots - hidden by default, appear on hover */
+  .fusion-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  #space-bubble:hover .fusion-dot {
+    opacity: 1;
+  }
+  
+  /* Fusion dot animations - dots merge toward center */
+  @keyframes fusionMerge1 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(60px, 40px) scale(1.5); opacity: 1; }
+    100% { transform: translate(120px, 80px) scale(0); opacity: 0; }
+  }
+  
+  @keyframes fusionMerge2 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50px, 50px) scale(1.5); opacity: 1; }
+    100% { transform: translate(-100px, 100px) scale(0); opacity: 0; }
+  }
+  
+  @keyframes fusionMerge3 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(40px, -30px) scale(1.5); opacity: 1; }
+    100% { transform: translate(80px, -60px) scale(0); opacity: 0; }
+  }
+  
+  @keyframes fusionMerge4 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(-30px, -40px) scale(1.5); opacity: 1; }
+    100% { transform: translate(-60px, -80px) scale(0); opacity: 0; }
+  }
+  
+  @keyframes fusionMerge5 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(80px, 0) scale(1.8); opacity: 1; }
+    100% { transform: translate(160px, 0) scale(0); opacity: 0; }
+  }
+  
+  @keyframes fusionMerge6 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50% { transform: translate(-70px, 20px) scale(1.6); opacity: 1; }
+    100% { transform: translate(-140px, 40px) scale(0); opacity: 0; }
+  }
+  
+  #space-bubble:hover .fusion-dot-1 {
+    animation: fusionMerge1 2s ease-in-out infinite;
+  }
+  #space-bubble:hover .fusion-dot-2 {
+    animation: fusionMerge2 2.2s ease-in-out infinite 0.3s;
+  }
+  #space-bubble:hover .fusion-dot-3 {
+    animation: fusionMerge3 1.8s ease-in-out infinite 0.5s;
+  }
+  #space-bubble:hover .fusion-dot-4 {
+    animation: fusionMerge4 2.4s ease-in-out infinite 0.2s;
+  }
+  #space-bubble:hover .fusion-dot-5 {
+    animation: fusionMerge5 2s ease-in-out infinite 0.7s;
+  }
+  #space-bubble:hover .fusion-dot-6 {
+    animation: fusionMerge6 2.1s ease-in-out infinite 0.4s;
+  }
+  
+  /* Twinkle animations with different timing */
+  @keyframes twinkle1 {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+  
+  @keyframes twinkle2 {
+    0%, 100% { opacity: 0.5; transform: scale(1.2); }
+    50% { opacity: 0.2; transform: scale(0.8); }
+  }
+  
+  @keyframes twinkle3 {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    33% { opacity: 1; transform: scale(1.8); }
+    66% { opacity: 0.2; transform: scale(0.9); }
+  }
+  
+  .animate-twinkle-1 {
+    animation: twinkle1 2s ease-in-out infinite;
+  }
+  
+  .animate-twinkle-2 {
+    animation: twinkle2 3s ease-in-out infinite 0.5s;
+  }
+  
+  .animate-twinkle-3 {
+    animation: twinkle3 2.5s ease-in-out infinite 1s;
+  }
+  
+  /* Click ripple on bubbles */
+  #space-bubble:active .bubble-1,
+  #space-bubble:active .bubble-2 {
+    transition: transform 0.15s ease-out;
+  }
+  
+  /* Flames animation - rocket and jetpack */
+  .rocket-flames, .jetpack-flames {
+    transition: opacity 0.2s ease;
+  }
+  
+  .rocket-flames.active, .jetpack-flames.active {
+    opacity: 1 !important;
+    animation: flameFlicker 0.08s ease-in-out infinite alternate;
+  }
+  
+  @keyframes flameFlicker {
+    0% { transform: scaleY(1) scaleX(1); }
+    50% { transform: scaleY(1.15) scaleX(0.95); }
+    100% { transform: scaleY(1.25) scaleX(1.05); }
+  }
+  
+  /* Gentle float animation for idle state */
+  #astronaut-sitting {
+    animation: gentleFloat 4s ease-in-out infinite;
+  }
+  
+  #astronaut-hanging {
+    animation: gentleFloatReverse 3.5s ease-in-out infinite;
+  }
+  
+  @keyframes gentleFloat {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+  }
+  
+  @keyframes gentleFloatReverse {
+    0%, 100% { transform: translateY(0) rotate(3deg); }
+    50% { transform: translateY(8px) rotate(-3deg); }
+  }
+  
+  /* ========== SIMPLE E2EE MESSAGE ANIMATION ========== */
+  
+  #flying-message {
+    transition: opacity 0.3s ease;
+  }
+  
+  #flying-message.flying-right {
+    opacity: 1;
+    animation: flyMessageRight 1.5s ease-in-out forwards;
+  }
+  
+  #flying-message.flying-left {
+    opacity: 1;
+    animation: flyMessageLeft 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes flyMessageRight {
+    0% {
+      left: -5%;
+      top: 25%;
+      transform: scale(0.5) rotate(-15deg);
+      opacity: 0;
+    }
+    10% {
+      left: 5%;
+      top: 28%;
+      transform: scale(1) rotate(-5deg);
+      opacity: 1;
+    }
+    50% {
+      left: 50%;
+      top: 40%;
+      transform: scale(1.2) rotate(0deg);
+      filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.8));
+    }
+    90% {
+      left: 88%;
+      top: 55%;
+      transform: scale(1) rotate(5deg);
+      opacity: 1;
+    }
+    100% {
+      left: 95%;
+      top: 58%;
+      transform: scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes flyMessageLeft {
+    0% {
+      left: 95%;
+      top: 58%;
+      transform: scale(0.5) rotate(15deg);
+      opacity: 0;
+    }
+    10% {
+      left: 88%;
+      top: 55%;
+      transform: scale(1) rotate(5deg);
+      opacity: 1;
+    }
+    50% {
+      left: 50%;
+      top: 40%;
+      transform: scale(1.2) rotate(0deg);
+      filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.8));
+    }
+    90% {
+      left: 5%;
+      top: 28%;
+      transform: scale(1) rotate(-5deg);
+      opacity: 1;
+    }
+    100% {
+      left: -5%;
+      top: 25%;
+      transform: scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  /* ========== LOCK ANIMATION ========== */
+  /* Lock opens when string passes through (at 50% of draw = peak of arc) */
+  
+  #security-lock .lock-shackle {
+    transform-origin: 17px 7px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.3s ease;
+  }
+  
+  #security-lock.unlocked .lock-shackle {
+    transform: rotate(-35deg) translateY(-3px);
+    stroke: #22C55E;
+  }
+  
+  #security-lock .lock-body {
+    transition: fill 0.3s ease;
+  }
+  
+  #security-lock.unlocked .lock-body {
+    fill: #22C55E;
+  }
+  
+  #lock-glow {
+    transition: opacity 0.4s ease;
+  }
+  
+  #security-lock.unlocked #lock-glow {
+    opacity: 1;
+  }
+  
+  /* ========== ASTRONAUT - Simple gentle float ========== */
+  
+  .astronaut-unit {
+    animation: gentleFloat 4s ease-in-out infinite;
+  }
+  
+  /* Small bounce when sending/receiving message */
+  #astronaut-sitting.sending {
+    animation: astronautSend 0.5s ease-out;
+  }
+  
+  #astronaut-hanging.receiving {
+    animation: astronautReceive 0.5s ease-out 1s;
+  }
+  
+  @keyframes astronautSend {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(8px) rotate(5deg); }
+  }
+  
+  @keyframes astronautReceive {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(-8px) rotate(-5deg); }
+  }
+</style>
