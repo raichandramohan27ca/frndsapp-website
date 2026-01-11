@@ -688,11 +688,11 @@ import '../styles/global.css';
                   </div>
                 </div>
                 
-                <!-- STEP 8: AI Builds SoulMate Schema -->
+                <!-- STEP 8: AI Space Builder -->
                 <div class="animation-frame" data-step="8">
                   <div class="p-4 h-full flex flex-col">
                     <div class="text-center mb-3">
-                      <h3 class="font-display font-bold text-sm">AI Building Schema</h3>
+                      <h3 class="font-display font-bold text-sm">AI Space Builder</h3>
                     </div>
                     
                     <div class="flex-1 space-y-2 overflow-hidden">
@@ -1249,7 +1249,7 @@ import '../styles/global.css';
             step: '03',
             icon: '📝',
             title: 'Join & Build Profile',
-            desc: 'AI asks questions based on Space schema. Your profile is created for THAT Space.',
+            desc: 'AI asks questions based on Space rules. Your profile is created for THAT Space.',
           },
           {
             step: '04',
@@ -1746,7 +1746,7 @@ import '../styles/global.css';
     'E2EE Chat',           // 5. Chat with Raj
     'Create New Space',    // 6. Same spaces list, + button highlighted
     'Building SoulMate',   // 7. Create form
-    'AI Schema',           // 8. AI builds schema
+    'AI Space Builder',    // 8. AI builds the Space
     '🎉 SoulMate Live!',   // 9. Space list with SoulMate now included
     'Users Join Space',    // 10. Two users filling profiles with AI
     'Match in SoulMate',   // 11. Matched with Priya, swipe right
@@ -1832,7 +1832,7 @@ import '../styles/global.css';
     if (autoPlayInterval) return;
     autoPlayInterval = setInterval(() => {
       goToNext();
-    }, 3000);
+    }, 5000); // 5 seconds per frame - slower for better viewing
   }
   
   // Click handlers for dots
