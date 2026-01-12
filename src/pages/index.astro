@@ -275,7 +275,7 @@ import '../styles/global.css';
           <a href="#phone-mockup-section" class="lg:hidden text-center mb-1 cursor-pointer" onclick="event.preventDefault(); document.getElementById('phone-mockup-section').scrollIntoView({behavior: 'smooth', block: 'start'}); if(window.resetPhoneAnimation) window.resetPhoneAnimation();">
             <p class="text-xl animate-bounce">👇</p>
           </a>
-          <div class="phone-frame w-[300px] sm:w-80 md:w-[340px] animate-float glow">
+          <div class="phone-frame w-[260px] sm:w-72 md:w-[320px] animate-float glow">
             <div class="phone-screen aspect-[9/19] relative">
               <!-- Phone Notch -->
               <div class="phone-notch absolute top-0 left-1/2 -translate-x-1/2 z-20"></div>
@@ -372,39 +372,39 @@ import '../styles/global.css';
                 
                 <!-- STEP 2: Join Flight Assist - AI Questions -->
                 <div class="animation-frame" data-step="2">
-                  <div class="p-4 h-full flex flex-col">
-                    <div class="glass-card p-3 mb-3 flex items-center gap-3">
-                      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
+                  <div class="p-3 h-full flex flex-col">
+                    <div class="glass-card p-2.5 mb-2 flex items-center gap-2">
+                      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-base">
                         ✈️
                       </div>
                       <div class="flex-1">
-                        <h4 class="font-medium text-sm">Flight Assist</h4>
-                        <p class="text-xs text-text-secondary">Airport helpers</p>
+                        <h4 class="font-medium text-xs">Flight Assist</h4>
+                        <p class="text-[10px] text-text-secondary">Airport helpers</p>
                       </div>
-                      <span class="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full">Joining...</span>
+                      <span class="bg-green-500/20 text-green-400 text-[10px] px-2 py-0.5 rounded-full">Joining...</span>
                     </div>
                     
-                    <div class="flex-1 space-y-2 overflow-hidden">
-                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
-                        <span class="text-primary">🤖 AI:</span> Welcome! Are you a Traveler or Helper?
+                    <div class="flex-1 space-y-1.5 overflow-hidden">
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-1.5 text-[11px] max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> Traveler or Helper?
                       </div>
-                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[60%] ml-auto">
+                      <div class="chat-bubble bg-white/10 rounded-lg p-1.5 text-[11px] max-w-[60%] ml-auto">
                         Traveler
                       </div>
-                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
-                        <span class="text-primary">🤖 AI:</span> What's your flight route?
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-1.5 text-[11px] max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> Flight route?
                       </div>
-                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[60%] ml-auto">
+                      <div class="chat-bubble bg-white/10 rounded-lg p-1.5 text-[11px] max-w-[60%] ml-auto">
                         DEL → JFK, Dec 25
                       </div>
-                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
-                        <span class="text-primary">🤖 AI:</span> What help do you need?
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-1.5 text-[11px] max-w-[85%]">
+                        <span class="text-primary">🤖 AI:</span> What help needed?
                       </div>
-                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[60%] ml-auto">
+                      <div class="chat-bubble bg-white/10 rounded-lg p-1.5 text-[11px] max-w-[60%] ml-auto">
                         Customs help, first time
                       </div>
                       <div class="chat-bubble bg-green-500/20 rounded-lg p-2 text-xs border border-green-500/30">
-                        <span class="text-green-400">✓ Profile created! 3 helpers found</span>
+                        <span class="text-green-400">✓ Profile created! 3 helpers found nearby</span>
                       </div>
                     </div>
                   </div>
@@ -413,27 +413,27 @@ import '../styles/global.css';
                 <!-- STEP 3: Match 1 - Swipe LEFT -->
                 <div class="animation-frame" data-step="3">
                   <div class="p-4 h-full flex flex-col">
-                    <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center justify-between mb-3">
                       <div class="flex items-center gap-2">
-                        <span>✈️</span>
-                        <h3 class="font-display font-bold text-sm">Matches</h3>
+                        <span class="text-lg">✈️</span>
+                        <h3 class="font-display font-bold text-base">Matches</h3>
                       </div>
-                      <span class="text-xs text-text-secondary">1 of 3</span>
+                      <span class="text-sm text-text-secondary">1 of 3</span>
                     </div>
                     
-                    <div class="glass-card p-3 flex-1 relative">
-                      <div class="absolute top-2 right-2 bg-green-500/20 px-2 py-0.5 rounded-full text-xs text-green-400">✓ Verified</div>
+                    <div class="glass-card p-4 flex-1 relative">
+                      <div class="absolute top-2 right-2 bg-green-500/20 px-2 py-1 rounded-full text-sm text-green-400">✓ Verified</div>
                       
-                      <div class="flex flex-col items-center pt-2">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center text-3xl mb-2">
+                      <div class="flex flex-col items-center pt-3">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center text-4xl mb-3">
                           👨‍🦳
                         </div>
-                        <h4 class="font-display font-bold">Mike, 45</h4>
-                        <p class="text-xs text-cyan-400">✈️ DEL→JFK</p>
-                        <p class="text-xs text-text-secondary">📍 2.3 km away</p>
+                        <h4 class="font-display font-bold text-lg">Mike, 45</h4>
+                        <p class="text-sm text-cyan-400">✈️ DEL→JFK</p>
+                        <p class="text-sm text-text-secondary">📍 2.3 km away</p>
                       </div>
                       
-                      <div class="mt-3 space-y-1 text-xs">
+                      <div class="mt-4 space-y-2 text-sm">
                         <div class="flex justify-between">
                           <span class="text-text-secondary">Languages:</span>
                           <span>English only</span>
@@ -444,11 +444,11 @@ import '../styles/global.css';
                         </div>
                       </div>
                       
-                      <div class="flex justify-center gap-6 mt-3">
-                        <button class="w-14 h-14 rounded-full bg-red-500/30 border-2 border-red-500 flex items-center justify-center text-2xl animate-pulse">
+                      <div class="flex justify-center gap-8 mt-4">
+                        <button class="w-16 h-16 rounded-full bg-red-500/30 border-2 border-red-500 flex items-center justify-center text-3xl animate-pulse">
                           ✕
                         </button>
-                        <button class="w-14 h-14 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center text-2xl opacity-50">
+                        <button class="w-16 h-16 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center text-3xl opacity-50">
                           💚
                         </button>
                       </div>
@@ -461,27 +461,27 @@ import '../styles/global.css';
                 <!-- STEP 4: Match 2 - Swipe RIGHT on Raj -->
                 <div class="animation-frame" data-step="4">
                   <div class="p-4 h-full flex flex-col">
-                    <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center justify-between mb-3">
                       <div class="flex items-center gap-2">
-                        <span>✈️</span>
-                        <h3 class="font-display font-bold text-sm">Matches</h3>
+                        <span class="text-lg">✈️</span>
+                        <h3 class="font-display font-bold text-base">Matches</h3>
                       </div>
-                      <span class="text-xs text-text-secondary">2 of 3</span>
+                      <span class="text-sm text-text-secondary">2 of 3</span>
                     </div>
                     
-                    <div class="glass-card p-3 flex-1 relative border border-green-500/30">
-                      <div class="absolute top-2 right-2 bg-green-500/20 px-2 py-0.5 rounded-full text-xs text-green-400">✓ Verified</div>
+                    <div class="glass-card p-4 flex-1 relative border border-green-500/30">
+                      <div class="absolute top-2 right-2 bg-green-500/20 px-2 py-1 rounded-full text-sm text-green-400">✓ Verified</div>
                       
-                      <div class="flex flex-col items-center pt-2">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-3xl mb-2 ring-2 ring-green-500">
+                      <div class="flex flex-col items-center pt-3">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-4xl mb-3 ring-2 ring-green-500">
                           👨
                         </div>
-                        <h4 class="font-display font-bold">Raj, 32</h4>
-                        <p class="text-xs text-cyan-400">✈️ Same flight! DEL→JFK</p>
-                        <p class="text-xs text-text-secondary">📍 0.5 km • At gate now!</p>
+                        <h4 class="font-display font-bold text-lg">Raj, 32</h4>
+                        <p class="text-sm text-cyan-400">✈️ Same flight! DEL→JFK</p>
+                        <p class="text-sm text-text-secondary">📍 0.5 km • At gate now!</p>
                       </div>
                       
-                      <div class="mt-3 space-y-1 text-xs">
+                      <div class="mt-4 space-y-2 text-sm">
                         <div class="flex justify-between">
                           <span class="text-text-secondary">Languages:</span>
                           <span class="text-green-400">Hindi, English ✓</span>
@@ -492,17 +492,17 @@ import '../styles/global.css';
                         </div>
                       </div>
                       
-                      <div class="flex justify-center gap-6 mt-3">
-                        <button class="w-14 h-14 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center text-2xl opacity-50">
+                      <div class="flex justify-center gap-8 mt-4">
+                        <button class="w-16 h-16 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center text-3xl opacity-50">
                           ✕
                         </button>
-                        <button class="w-14 h-14 rounded-full bg-green-500/30 border-2 border-green-500 flex items-center justify-center text-2xl animate-pulse">
+                        <button class="w-16 h-16 rounded-full bg-green-500/30 border-2 border-green-500 flex items-center justify-center text-3xl animate-pulse">
                           💚
                         </button>
                       </div>
                     </div>
                     
-                    <p class="text-center text-xs text-green-400 mt-2">Perfect match! Swipe right →</p>
+                    <p class="text-center text-sm text-green-400 mt-3 font-medium">Perfect match! Swipe right →</p>
                   </div>
                 </div>
                 
@@ -691,36 +691,29 @@ import '../styles/global.css';
                 <!-- STEP 8: AI Space Builder -->
                 <div class="animation-frame" data-step="8">
                   <div class="p-4 h-full flex flex-col">
-                    <div class="text-center mb-3">
-                      <h3 class="font-display font-bold text-sm">AI Space Builder</h3>
+                    <div class="text-center mb-4">
+                      <h3 class="font-display font-bold text-base">AI Space Builder</h3>
                     </div>
                     
-                    <div class="flex-1 space-y-2 overflow-hidden">
-                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
+                    <div class="flex-1 space-y-3 overflow-hidden">
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-2.5 text-sm max-w-[85%]">
                         <span class="text-primary">🤖 AI:</span> What should people match on?
                       </div>
-                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[70%] ml-auto">
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2.5 text-sm max-w-[70%] ml-auto">
                         Age, Religion, Family values
                       </div>
-                      <div class="chat-bubble bg-primary/20 rounded-lg p-2 text-xs max-w-[85%]">
+                      <div class="chat-bubble bg-primary/20 rounded-lg p-2.5 text-sm max-w-[85%]">
                         <span class="text-primary">🤖 AI:</span> Questions to ask users?
                       </div>
-                      <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[70%] ml-auto">
+                      <div class="chat-bubble bg-white/10 rounded-lg p-2.5 text-sm max-w-[70%] ml-auto">
                         Marriage timeline, location pref
                       </div>
-                      <div class="chat-bubble bg-green-500/20 rounded-lg p-3 text-xs border border-green-500/30 text-center">
-                        <span class="text-2xl">✨</span>
-                        <p class="text-green-400 font-medium mt-1">"SoulMate" is LIVE!</p>
+                      <div class="chat-bubble bg-green-500/20 rounded-lg p-4 text-sm border border-green-500/30 text-center">
+                        <span class="text-3xl">✨</span>
+                        <p class="text-green-400 font-bold mt-2 text-base">"SoulMate" is LIVE!</p>
                       </div>
                     </div>
                     
-                    <div class="glass-card p-3 mt-3 flex items-center justify-between">
-                      <div class="flex items-center gap-2">
-                        <span>💍</span>
-                        <span class="text-sm font-medium">SoulMate</span>
-                      </div>
-                      <span class="text-xs text-green-400">Now chatting with Priya...</span>
-                    </div>
                   </div>
                 </div>
                 
@@ -803,70 +796,70 @@ import '../styles/global.css';
                 
                 <!-- STEP 10: Two Users Joining SoulMate - AI Profile Builder -->
                 <div class="animation-frame" data-step="10">
-                  <div class="p-3 h-full flex flex-col">
-                    <div class="glass-card p-2 mb-2 flex items-center gap-2">
-                      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">💍</div>
+                  <div class="p-4 h-full flex flex-col">
+                    <div class="glass-card p-3 mb-3 flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-lg">💍</div>
                       <div class="flex-1">
-                        <h4 class="font-medium text-[11px]">SoulMate</h4>
-                        <p class="text-[9px] text-green-400">2 users joining...</p>
+                        <h4 class="font-medium text-sm">SoulMate</h4>
+                        <p class="text-xs text-green-400">2 users joining...</p>
                       </div>
                     </div>
                     
                     <!-- Two profile builders side by side -->
-                    <div class="grid grid-cols-2 gap-2 flex-1 overflow-hidden">
+                    <div class="grid grid-cols-2 gap-3 flex-1 overflow-hidden">
                       <!-- User 1: You -->
-                      <div class="glass-card p-2 border border-primary/30 rounded-xl">
-                        <div class="flex items-center gap-1 mb-1.5">
-                          <div class="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center text-[10px]">👨</div>
-                          <span class="text-[9px] font-medium">You</span>
+                      <div class="glass-card p-3 border border-primary/30 rounded-xl">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-sm">👨</div>
+                          <span class="text-xs font-medium">You</span>
                         </div>
-                        <div class="space-y-1.5 text-[8px]">
-                          <div class="bg-primary/20 rounded p-1">
+                        <div class="space-y-2 text-[11px]">
+                          <div class="bg-primary/20 rounded p-1.5">
                             <span class="text-primary">🤖</span> Age range?
                           </div>
-                          <div class="bg-white/10 rounded p-1 ml-2">
+                          <div class="bg-white/10 rounded p-1.5 ml-2">
                             25-32
                           </div>
-                          <div class="bg-primary/20 rounded p-1">
+                          <div class="bg-primary/20 rounded p-1.5">
                             <span class="text-primary">🤖</span> Timeline?
                           </div>
-                          <div class="bg-white/10 rounded p-1 ml-2">
+                          <div class="bg-white/10 rounded p-1.5 ml-2">
                             1-2 years
                           </div>
-                          <div class="bg-green-500/20 rounded p-1 text-green-400 text-center">
+                          <div class="bg-green-500/20 rounded p-1.5 text-green-400 text-center text-xs">
                             ✓ Profile ready!
                           </div>
                         </div>
                       </div>
                       
                       <!-- User 2: Priya -->
-                      <div class="glass-card p-2 border border-pink-500/30 rounded-xl">
-                        <div class="flex items-center gap-1 mb-1.5">
-                          <div class="w-5 h-5 rounded-full bg-pink-500 flex items-center justify-center text-[10px]">👩</div>
-                          <span class="text-[9px] font-medium">Priya</span>
+                      <div class="glass-card p-3 border border-pink-500/30 rounded-xl">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-7 h-7 rounded-full bg-pink-500 flex items-center justify-center text-sm">👩</div>
+                          <span class="text-xs font-medium">Priya</span>
                         </div>
-                        <div class="space-y-1.5 text-[8px]">
-                          <div class="bg-primary/20 rounded p-1">
+                        <div class="space-y-2 text-[11px]">
+                          <div class="bg-primary/20 rounded p-1.5">
                             <span class="text-primary">🤖</span> Age range?
                           </div>
-                          <div class="bg-white/10 rounded p-1 ml-2">
+                          <div class="bg-white/10 rounded p-1.5 ml-2">
                             26-35
                           </div>
-                          <div class="bg-primary/20 rounded p-1">
+                          <div class="bg-primary/20 rounded p-1.5">
                             <span class="text-primary">🤖</span> Timeline?
                           </div>
-                          <div class="bg-white/10 rounded p-1 ml-2">
+                          <div class="bg-white/10 rounded p-1.5 ml-2">
                             Ready now
                           </div>
-                          <div class="bg-green-500/20 rounded p-1 text-green-400 text-center">
+                          <div class="bg-green-500/20 rounded p-1.5 text-green-400 text-center text-xs">
                             ✓ Profile ready!
                           </div>
                         </div>
                       </div>
                     </div>
                     
-                    <div class="mt-2 text-center">
-                      <p class="text-[9px] text-text-secondary">AI asks questions defined by Space creator</p>
+                    <div class="mt-3 text-center">
+                      <p class="text-xs text-text-secondary">AI asks questions defined by Space creator</p>
                     </div>
                   </div>
                 </div>
@@ -1023,11 +1016,14 @@ import '../styles/global.css';
                         </div>
                         <p class="text-xs text-red-400 mt-1">⚠️ Screenshot attempt detected</p>
                       </div>
+                      <div class="chat-bubble bg-accent/20 rounded-lg p-2 text-xs max-w-[80%] ml-auto">
+                        Why did you try to snap that? 😕
+                      </div>
                       <div class="chat-bubble bg-white/10 rounded-lg p-2 text-xs max-w-[80%]">
-                        Oops! Someone tried to capture. Message gone! 🔐
+                        Sorry... I didn't mean to! 🙏
                       </div>
                       <div class="chat-bubble bg-accent/20 rounded-lg p-2 text-xs max-w-[80%] ml-auto">
-                        That's why I love OTS! Our privacy protected 💕
+                        Now I know to be careful with you... 🤔
                       </div>
                     </div>
                     
@@ -1116,7 +1112,7 @@ import '../styles/global.css';
         <div class="comparison-card group glass-card p-4 md:p-4 rounded-2xl border-2 border-red-500/20 hover:border-red-500/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/20">
           <p class="text-text-secondary text-xs md:text-[10px] line-through mb-1 opacity-60">Basic "view once" message</p>
           <p class="text-white font-bold text-sm md:text-base">👁️ One-Time Secure</p>
-          <p class="text-red-400 text-xs md:text-xs mt-1 leading-relaxed">World's first! Blocks other cameras from capturing. Get notified if anyone tries.</p>
+          <p class="text-red-400 text-xs md:text-xs mt-1 leading-relaxed">World's first! App that Blocks other cameras too from capturing ur message. Get notified if anyone tries.</p>
         </div>
       </div>
       
