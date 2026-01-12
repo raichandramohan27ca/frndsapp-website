@@ -20,7 +20,7 @@ import '../styles/global.css';
   </div>
 
   <!-- Hero Section - adjusted padding since beta banner is above -->
-  <section class="relative flex items-center pt-4 sm:pt-6 overflow-x-hidden overflow-y-visible">
+  <section class="relative flex items-center pt-2 sm:pt-4 overflow-x-hidden overflow-y-visible">
     <!-- Background Effects -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
@@ -28,7 +28,7 @@ import '../styles/global.css';
       <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 md:pt-10 pb-2 md:pb-6 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 sm:pt-2 md:pt-6 pb-1 md:pb-4 relative z-10">
       <div class="grid lg:grid-cols-2 gap-2 sm:gap-4 lg:gap-8 items-center">
         <!-- Left Content with Two Overlapping Space Bubbles -->
         <div class="text-center lg:text-left relative overflow-visible pt-2 sm:pt-4 md:pt-0 min-h-[380px] sm:min-h-[360px] md:min-h-0">
@@ -128,7 +128,7 @@ import '../styles/global.css';
             </div>
             
             <!-- HANGING Astronaut with Jetpack - At RIGHT edge of second bubble -->
-            <div id="astronaut-hanging" class="astronaut-unit absolute z-30 right-[2%] bottom-[8%] sm:right-[2%] sm:bottom-[5%]">
+            <div id="astronaut-hanging" class="astronaut-unit absolute z-30 right-[2%] bottom-[15%] sm:right-[2%] sm:bottom-[10%]">
               <svg class="w-10 h-12 sm:w-12 sm:h-14 md:w-14 md:h-16 drop-shadow-[0_0_10px_rgba(236,72,153,0.5)]" viewBox="0 0 80 110" fill="none">
                 <!-- ASTRONAUT HANGING/FLOATING with jetpack -->
                 <!-- Helmet -->
@@ -206,12 +206,12 @@ import '../styles/global.css';
             <!-- Content - Zoomed on mobile, properly spaced on desktop -->
             <div class="relative z-20 py-5 sm:py-5 px-5 sm:px-5 mt-4 sm:mt-4 scale-105 sm:scale-100 origin-top-left">
               <!-- App Category Badge - shifts right on large screens -->
-              <div class="inline-flex items-center gap-2 px-3 sm:px-3 py-1.5 sm:py-1.5 rounded-full bg-white/5 border border-white/10 mb-4 sm:mb-4 lg:ml-32 xl:ml-40">
-                <span class="text-lg sm:text-lg">💬</span>
-                <span class="text-base sm:text-base text-text-secondary">Next-Gen Messaging</span>
+              <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 mb-3 sm:mb-4 lg:ml-32 xl:ml-40">
+                <span class="text-xl sm:text-xl">💬</span>
+                <span class="text-lg sm:text-lg text-text-secondary">Next-Gen Messaging</span>
               </div>
               
-              <h1 class="text-4xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight mb-4 sm:mb-4">
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-3 sm:mb-4 whitespace-nowrap">
                 <span class="gradient-text">Connect in Space</span>
                 <!-- Secure Message Shield Icon -->
                 <span id="security-lock" class="inline-block ml-1 relative align-middle">
@@ -236,15 +236,15 @@ import '../styles/global.css';
                 </span>
               </h1>
               
-              <p class="text-base sm:text-base lg:text-lg text-white/90 font-medium mb-2 sm:mb-2">
+              <p class="text-base sm:text-lg lg:text-xl text-white/90 font-medium mb-2 sm:mb-3 whitespace-nowrap">
                 Space has no boundaries. Neither do possibilities.
               </p>
-              <p class="text-base sm:text-base text-text-secondary mb-4 sm:mb-4">
+              <p class="text-lg sm:text-lg lg:text-xl text-text-secondary mb-3 sm:mb-4">
                 Join Spaces for dating, business, travel — anything.
               </p>
               
               <!-- Create your own -->
-              <p class="text-accent text-sm sm:text-sm mb-4 sm:mb-4 font-medium">
+              <p class="text-accent text-base sm:text-lg mb-3 sm:mb-4 font-medium">
                 Can't find the right Space? <span class="underline decoration-dotted underline-offset-4">Create your own!</span> ✨
               </p>
               
@@ -272,10 +272,11 @@ import '../styles/global.css';
         <!-- Right: Animated Phone Mockup - scroll down to see on mobile -->
         <div id="phone-mockup-section" class="relative flex flex-col items-center justify-center lg:justify-end mt-0 lg:mt-0">
           <!-- Scroll hint on mobile - just animated hand, resets animation on click -->
-          <a href="#phone-mockup-section" class="lg:hidden text-center mb-1 cursor-pointer" onclick="event.preventDefault(); document.getElementById('phone-mockup-section').scrollIntoView({behavior: 'smooth', block: 'start'}); if(window.resetPhoneAnimation) window.resetPhoneAnimation();">
+          <a href="#phone-animation-target" class="lg:hidden text-center mb-2 cursor-pointer" onclick="event.preventDefault(); document.getElementById('phone-animation-target').scrollIntoView({behavior: 'smooth', block: 'start'}); if(window.resetPhoneAnimation) window.resetPhoneAnimation();">
             <p class="text-xl animate-bounce">👇</p>
           </a>
-          <div class="phone-frame w-[260px] sm:w-72 md:w-[320px] animate-float glow">
+          <div id="phone-animation-target" class="scroll-mt-16"></div>
+          <div class="phone-frame w-[240px] sm:w-64 md:w-72 lg:w-[280px] animate-float glow">
             <div class="phone-screen aspect-[9/19] relative">
               <!-- Phone Notch -->
               <div class="phone-notch absolute top-0 left-1/2 -translate-x-1/2 z-20"></div>
@@ -1081,16 +1082,16 @@ import '../styles/global.css';
   </section>
   
   <!-- HERO Comparison Strip - Center of Attraction -->
-  <section class="py-6 md:py-8 border-y border-primary/20 bg-gradient-to-r from-dark-bg via-primary/10 to-dark-bg relative overflow-hidden">
+  <section class="py-2 md:py-3 border-y border-primary/20 bg-gradient-to-r from-dark-bg via-primary/10 to-dark-bg relative overflow-hidden">
     <!-- Glow effects -->
     <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute top-0 left-1/4 w-64 h-32 bg-primary/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-1/4 w-64 h-32 bg-accent/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 left-1/4 w-64 h-16 bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-64 h-16 bg-accent/20 rounded-full blur-3xl"></div>
     </div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section title -->
-      <p class="text-center text-xs md:text-sm text-text-secondary mb-3 uppercase tracking-wider">Why FRNDSAPP is Different</p>
+      <p class="text-center text-xs md:text-sm text-text-secondary mb-1.5 uppercase tracking-wider">Why FRNDSAPP is Different</p>
       
       <!-- Main comparison grid - Single column on mobile, 4 columns on desktop -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-3 text-center mb-4">
